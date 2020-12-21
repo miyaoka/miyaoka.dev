@@ -41,7 +41,7 @@ function ontext<V extends Node>(node: V,
       }
     }
 
-    let img = `<img src="${imgPath}" title="${caption ?? ''}">`
+    let img = `<img src="${imgPath}" title="${caption ?? ''}" loading="lazy">`
     if (!interactive) {
       img = `<a href="${imgPath}" target="_blank" rel="noopener">${img}</a>`
     }
