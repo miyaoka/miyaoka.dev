@@ -39,3 +39,9 @@ figcaption {
   color: #666;
   margin: 4px;
 }
+
+code {
+  background-color: #eee;
+  color: #666;
+  padding: 0.1em 0.4em;
+}
