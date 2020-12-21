@@ -18,6 +18,7 @@ export default function Post({
     <Layout>
       <Head>
         <title>{postData.title}</title>
+        <meta name="og:title" content={postData.title} />
       </Head>
       <article>
         <h1 className={utilStyles.headingXl}>{postData.title}</h1>
