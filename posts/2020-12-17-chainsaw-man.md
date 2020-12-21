@@ -5,7 +5,8 @@ date: '2020-12-17'
 
 今週のジャンプでチェンソーマンが完結したので藤川くんと振り返りの雑談をした。
 
-[miyaocast: #11 チェンソーマンなど漫画の話](https://podcasts.google.com/feed/aHR0cHM6Ly9hbmNob3IuZm0vcy8zZmFkYzZiMC9wb2RjYXN0L3Jzcw/episode/YWY1ZDg5OWEtMTQyZS00ZTk4LWFhNjUtNjQ4MmZjYWZiODI3?ep=14&pe=1&pep=0)
+https://podcasts.google.com/feed/aHR0cHM6Ly9hbmNob3IuZm0vcy8zZmFkYzZiMC9wb2RjYXN0L3Jzcw/episode/YWY1ZDg5OWEtMTQyZS00ZTk4LWFhNjUtNjQ4MmZjYWZiODI3?ep=14&pe=1&pep=0
+miyaocast: #11 チェンソーマンなど漫画の話
 
 （ネタバレ前提で話しているので、もし読んでない人は読むまでは聞かないでほしい）
 
