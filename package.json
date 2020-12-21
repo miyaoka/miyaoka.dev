@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "cross-env NODE_ICU_DATA=node_modules/full-icu next build",
     "start": "next start"
   },
   "dependencies": {
@@ -19,6 +19,8 @@
   "devDependencies": {
     "@types/node": "^14.14.14",
     "@types/react": "^17.0.0",
+    "cross-env": "^7.0.3",
+    "full-icu": "^1.3.1",
     "typescript": "^4.1.3"
   }
 }
