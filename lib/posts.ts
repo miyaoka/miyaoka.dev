@@ -5,6 +5,7 @@ import remark from 'remark'
 import html from 'remark-html'
 import { images } from './remarkFigure'
 import { links } from './remarkAutoLink'
+import externalLinks from 'remark-external-links'
 
 const postsDirectory = path.join(process.cwd(), 'posts')
 
@@ -60,6 +61,7 @@ export async function getPostData(id: string) {
   const processedContent = await remark()
     .use(images)
     .use(links)
+    .use(externalLinks, { target: '_blank', rel: ['noopener'] })
     .use(html)
     .process(matterResult.content)
   const contentHtml = processedContent.toString()
