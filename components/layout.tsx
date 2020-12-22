@@ -51,7 +51,7 @@ export default function Layout({
                 target="_blank"
                 rel="noopener"
               >
-                <img src={link.img} width="32" height="32" />
+                <img src={link.img} alt={link.title} />
               </a>
             )
           })}

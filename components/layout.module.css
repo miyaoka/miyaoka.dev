@@ -27,7 +27,13 @@
 .headLinks {
   display: flex;
   flex-direction: row;
-  margin: 10px;
+}
+.headLinks a {
+  margin: 4px;
+}
+.headLinks img {
+  width: 40px;
+  height: 40px;
 }
 .main {
   margin-top: 40px;
