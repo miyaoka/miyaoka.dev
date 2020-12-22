@@ -40,6 +40,11 @@ figcaption {
   margin: 4px;
 }
 
+figure a,
+figure img {
+  width: 100%;
+}
+
 code {
   background-color: #eee;
   color: #666;

@@ -36,29 +36,29 @@ const getOptimizedPath = (imgPath: string) => {
   const matched = imgPath.match(/^(https:\/\/i\.imgur\.com\/)(.+)(\.[^.]+)/)
   if (matched == null) return { imgSrc: imgPath }
   const [_, host, imgId, ext] = matched
-  const imgurSize = 'l'
+  const size1x = 'l'
+  const size2x = 'h'
   return {
-    imgSrc: `${host}${imgId}${imgurSize}${ext}`,
-    webpSrc: `${host}${imgId}${imgurSize}.webp`,
+    imgSrc: `${host}${imgId}${size1x}${ext}`,
+    srcset: `${host}${imgId}${size1x}.webp 1x,${host}${imgId}${size2x}.webp 2x`,
   }
 }
 
-const getPicture = (imgSrc: string, webpSrc?: string, caption?: string) => {
-  const imgTag = `<img src="${imgSrc}" title="${
-    caption ?? ''
-  }" loading="lazy" style="min-height:480px" onload="this.style.minHeight='auto'">`
+const getPicture = (imgSrc: string, srcset?: string, caption?: string) => {
+  const imgTag = `<img src="${imgSrc}" title="${caption ?? ''
+    }" loading="lazy" style="min-height:480px" onload="this.style.minHeight='auto'">`
 
-  if (webpSrc == null) return imgTag
+  if (srcset == null) return imgTag
   return `<picture>
 <source type="image/webp"
-        srcset="${webpSrc}">
+        srcset="${srcset}">
 ${imgTag}
 </picture>`
 }
 
 const getImg = (imgPath: string, inLink: boolean, caption?: string) => {
-  const { imgSrc, webpSrc } = getOptimizedPath(imgPath)
-  const picture = getPicture(imgSrc, webpSrc, caption)
+  const { imgSrc, srcset } = getOptimizedPath(imgPath)
+  const picture = getPicture(imgSrc, srcset, caption)
 
   if (inLink) return picture
   return `<a href="${imgPath}" target="_blank" rel="noopener">${picture}</a>`
