@@ -23,3 +23,12 @@
 .backToHome {
   margin: 3rem 0 0;
 }
+
+.headLinks {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+}
+.main {
+  margin-top: 40px;
+}
