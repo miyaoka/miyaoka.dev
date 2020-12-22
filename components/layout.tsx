@@ -4,6 +4,7 @@ import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
 
 export const siteTitle = 'miyaoka.dev'
+const siteDesc = 'miyaokaの備忘録'
 
 export default function Layout({
   children,
@@ -16,7 +17,8 @@ export default function Layout({
     <div className={styles.container}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
-        <meta name="description" content="miyaokaの雑記" />
+        <meta name="description" content={siteDesc} />
+        <meta name="og:description" content={siteDesc} />
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary" />
       </Head>
