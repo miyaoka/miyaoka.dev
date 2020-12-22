@@ -60,8 +60,9 @@ const getOptimizedPath = (imgPath: string) => {
 }
 
 const getPicture = (imgSrc: string, srcset?: string, caption?: string) => {
-  const imgTag = `<img src="${imgSrc}" title="${caption ?? ''
-    }" loading="lazy" style="min-height:480px" onload="this.style.minHeight='auto'">`
+  const alt = caption != null ? `alt="${caption}"` : ''
+  const title = caption != null ? `title="${caption}"` : ''
+  const imgTag = `<img src="${imgSrc}" ${alt} ${title} loading="lazy" style="min-height:480px" onload="this.style.minHeight='auto'">`
 
   if (srcset == null) return imgTag
   return `<picture>
