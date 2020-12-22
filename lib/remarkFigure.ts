@@ -7,7 +7,9 @@ const isImgExt = (value: string) => /\.(svg|png|jpg|jpeg|gif)$/.test(value)
 const isAbsolutePath = (value: string) => value.startsWith('/')
 const isRelativePath = (value: string) =>
   value.startsWith('./') || value.startsWith('../')
-const isImgPath = (value: string) => isAbsolutePath(value) || isRelativePath(value)
+const isImgPath = (value: string) =>
+  isAbsolutePath(value) || isRelativePath(value)
+
 // @ts-ignore
 const isInteractive = convert(['link', 'linkReference'])
 
@@ -19,8 +21,37 @@ function transform(tree: Node) {
   visit(tree, 'text', ontext)
 }
 
-function ontext<V extends Node>(node: V,
-  parents: Node[]) {
+const isParentInteractive = (parents: Node[]): boolean => {
+  let length = parents.length
+  // Check if we’re in interactive content.
+  while (length--) {
+    if (isInteractive(parents[length])) {
+      return true
+    }
+  }
+  return false
+}
+
+const getImg = (imgPath: string, inLink: boolean, caption?: string) => {
+  const img = `<img src="${imgPath}" title="${
+    caption ?? ''
+  }" loading="lazy" style="min-height:1000px" onload="this.style.minHeight='auto'">`
+
+  const matched = imgPath.match(/^https:\/\/i\.imgur\.com\/(.+)\.[^.]+/)
+  const picture =
+    matched == null
+      ? img
+      : `<picture>
+<source type="image/webp"
+        srcset="https://i.imgur.com/${matched[1]}.webp">
+${img}
+</picture>`
+
+  if (inLink) return picture
+  return `<a href="${imgPath}" target="_blank" rel="noopener">${picture}</a>`
+}
+
+function ontext<V extends Node>(node: V, parents: Node[]) {
   const value = String(node.value).trim()
 
   const lines = value.split('\n')
@@ -29,30 +60,20 @@ function ontext<V extends Node>(node: V,
   const [imgPath, caption] = lines
 
   if ((isUrl(imgPath) || isImgPath(imgPath)) && isImgExt(imgPath)) {
-    let interactive = false
-    let length = parents.length
-    const siblings = parents[length - 1].children as Node[]
+    const siblings = parents[parents.length - 1].children as Node[]
 
     // Check if we’re in interactive content.
-    while (length--) {
-      if (isInteractive(parents[length])) {
-        interactive = true
-        break
-      }
-    }
+    const interactive = isParentInteractive(parents)
 
-    let img = `<img src="${imgPath}" title="${
-      caption ?? ''
-    }" loading="lazy" style="min-height:1000px" onload="this.style.minHeight='auto'">`
-    if (!interactive) {
-      img = `<a href="${imgPath}" target="_blank" rel="noopener">${img}</a>`
-    }
-    const figCaption = caption != null ? `<figcaption>${caption}</figcaption>` : ''
+    const img = getImg(imgPath, interactive, caption)
+
+    const figCaption =
+      caption != null ? `<figcaption>${caption}</figcaption>` : ''
 
     const figure = {
       type: 'html',
       position: node.position,
-      value: `<figure>${img}${figCaption}</figure>`
+      value: `<figure>${img}${figCaption}</figure>`,
     }
 
     siblings[siblings.indexOf(node)] = figure
