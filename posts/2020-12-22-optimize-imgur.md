@@ -27,7 +27,7 @@ imgur は webp 画像も生成している。拡張子を webp にするだけ�
 
 ## つまり…？
 
-https://i.imgur.com/gzIXDlo.png
+https://i.imgur.com/BfDUIDb.png
 こんな感じの記法でここまで生成する
 
 ## パフォーマンス測定
