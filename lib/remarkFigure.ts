@@ -32,20 +32,33 @@ const isParentInteractive = (parents: Node[]): boolean => {
   return false
 }
 
-const getImg = (imgPath: string, inLink: boolean, caption?: string) => {
-  const img = `<img src="${imgPath}" title="${
+const getOptimizedPath = (imgPath: string) => {
+  const matched = imgPath.match(/^(https:\/\/i\.imgur\.com\/)(.+)(\.[^.]+)/)
+  if (matched == null) return { imgSrc: imgPath }
+  const [_, host, imgId, ext] = matched
+  const imgurSize = 'l'
+  return {
+    imgSrc: `${host}${imgId}${imgurSize}${ext}`,
+    webpSrc: `${host}${imgId}${imgurSize}.webp`,
+  }
+}
+
+const getPicture = (imgSrc: string, webpSrc?: string, caption?: string) => {
+  const imgTag = `<img src="${imgSrc}" title="${
     caption ?? ''
   }" loading="lazy" style="min-height:1000px" onload="this.style.minHeight='auto'">`
 
-  const matched = imgPath.match(/^https:\/\/i\.imgur\.com\/(.+)\.[^.]+/)
-  const picture =
-    matched == null
-      ? img
-      : `<picture>
+  if (webpSrc == null) return imgTag
+  return `<picture>
 <source type="image/webp"
-        srcset="https://i.imgur.com/${matched[1]}.webp">
-${img}
+        srcset="${webpSrc}">
+${imgTag}
 </picture>`
+}
+
+const getImg = (imgPath: string, inLink: boolean, caption?: string) => {
+  const { imgSrc, webpSrc } = getOptimizedPath(imgPath)
+  const picture = getPicture(imgSrc, webpSrc, caption)
 
   if (inLink) return picture
   return `<a href="${imgPath}" target="_blank" rel="noopener">${picture}</a>`
