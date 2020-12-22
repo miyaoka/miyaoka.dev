@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ICU_DATA=node_modules/full-icu next dev",
-    "build": "cross-env NODE_ICU_DATA=node_modules/full-icu next build",
+    "build": "cross-env NODE_ICU_DATA=node_modules/full-icu next build && next export",
     "start": "next start"
   },
   "dependencies": {
