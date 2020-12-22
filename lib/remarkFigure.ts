@@ -36,11 +36,26 @@ const getOptimizedPath = (imgPath: string) => {
   const matched = imgPath.match(/^(https:\/\/i\.imgur\.com\/)(.+)(\.[^.]+)/)
   if (matched == null) return { imgSrc: imgPath }
   const [_, host, imgId, ext] = matched
-  const size1x = 'l'
-  const size2x = 'h'
+
+  const thumbs = [
+    {
+      size: 1024,
+      suffix: 'h'
+    },
+    {
+      size: 640,
+      suffix: 'l'
+    },
+    {
+      size: 320,
+      suffix: 'm'
+    },
+  ]
+  const srcset = thumbs.map(({ size, suffix }) => `${host}${imgId}${suffix}.webp ${size}w`).join(',')
+
   return {
-    imgSrc: `${host}${imgId}${size1x}${ext}`,
-    srcset: `${host}${imgId}${size1x}.webp 1x,${host}${imgId}${size2x}.webp 2x`,
+    imgSrc: `${host}${imgId}l${ext}`,
+    srcset
   }
 }
 
