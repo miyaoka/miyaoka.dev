@@ -1,6 +1,8 @@
 ---
-title: 'imgur画像の最適化'
+title: 'imgur画像を表示するHTMLの最適化'
 date: '2020-12-22'
+desc: ブログの画像は imgur を使うことにしたが、そのためにいくつか工夫をした。
+image: https://i.imgur.com/BfDUIDb.png
 ---
 
 ブログの画像は imgur を使うことにしたが、そのためにいくつか工夫をした。

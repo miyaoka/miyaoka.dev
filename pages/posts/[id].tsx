@@ -12,22 +12,37 @@ export default function Post({
     title: string
     date: string
     contentHtml: string
+    desc?: string
+    image?: string
   }
 }) {
+  const { title, date, contentHtml, desc, image } = postData
   return (
     <Layout>
       <Head>
-        <title>{postData.title}</title>
-        <meta name="og:title" content={postData.title} />
+        <title>{title}</title>
+        <meta name="og:title" content={title} />
+        {desc && (
+          <>
+            <meta name="description" content={desc} />
+            <meta name="og:description" content={desc} />
+          </>
+        )}
+        {image && (
+          <>
+            <meta name="og:image" content={image} />
+            <meta name="twitter:card" content="summary_large_image" />
+          </>
+        )}
       </Head>
       <article>
-        <h1 className={utilStyles.headingXl}>{postData.title}</h1>
+        <h1 className={utilStyles.headingXl}>{title}</h1>
         <div className={utilStyles.lightText}>
-          <Date dateString={postData.date} />
+          <Date dateString={date} />
         </div>
         <div
           className={utilStyles.text}
-          dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
+          dangerouslySetInnerHTML={{ __html: contentHtml }}
         />
       </article>
     </Layout>
