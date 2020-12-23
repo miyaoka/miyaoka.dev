@@ -37,7 +37,11 @@ export default function Layout({
           key="og:site_name"
           content="miyaoka.dev"
         />
-        <meta property="og:image" key="og:image" content="/images/ogp.png" />
+        <meta
+          property="og:image"
+          key="og:image"
+          content="https://i.imgur.com/4k4jx7s.png"
+        />
         <meta
           property="og:description"
           key="og:description"
