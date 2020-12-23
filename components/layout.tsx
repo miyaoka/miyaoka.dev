@@ -40,7 +40,7 @@ export default function Layout({
         <meta
           property="og:image"
           key="og:image"
-          content="https://i.imgur.com/4k4jx7s.png"
+          content="https://i.imgur.com/iwfniKw.png"
         />
         <meta
           property="og:description"
