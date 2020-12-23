@@ -59,6 +59,7 @@ export default function Layout({
           {linkList.map((link) => {
             return (
               <a
+                key={link.url}
                 href={link.url}
                 title={link.title}
                 target="_blank"
