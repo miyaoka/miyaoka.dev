@@ -24,14 +24,22 @@ export default function Post({
         <meta name="og:title" content={title} />
         {desc && (
           <>
-            <meta name="description" content={desc} />
-            <meta property="og:description" content={desc} />
+            <meta name="description" key="description" content={desc} />
+            <meta
+              property="og:description"
+              key="og:description"
+              content={desc}
+            />
           </>
         )}
         {image && (
           <>
-            <meta name="twitter:card" content="summary_large_image" />
-            <meta property="og:image" content={image} />
+            <meta
+              name="twitter:card"
+              key="twitter:card"
+              content="summary_large_image"
+            />
+            <meta property="og:image" key="og:image" content={image} />
           </>
         )}
       </Head>

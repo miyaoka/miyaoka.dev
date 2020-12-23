@@ -30,30 +30,20 @@ export default function Layout({
   return (
     <div className={styles.container}>
       <Head>
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/apple-touch-icon.png"
+        <meta name="description" key="description" content={siteDesc} />
+        <meta name="twitter:card" key="twitter:card" content="summary" />
+        <meta
+          property="og:site_name"
+          key="og:site_name"
+          content="miyaoka.dev"
         />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon-32x32.png"
+        <meta property="og:image" key="og:image" content="/images/ogp.png" />
+        <meta
+          property="og:description"
+          key="og:description"
+          content={siteDesc}
         />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon-16x16.png"
-        />
-        <link rel="manifest" href="/site.webmanifest" />
-        <meta name="description" content={siteDesc} />
-        <meta name="twitter:card" content="summary" />
-        <meta property="og:site_name" content="miyaoka.dev" />
-        <meta property="og:image" content="/images/ogp.png" />
-        <meta property="og:description" content={siteDesc} />
-        <meta property="og:title" content={siteTitle} />
+        <meta property="og:title" key="og:title" content={siteTitle} />
       </Head>
       <header className={styles.header}>
         <h1 className={utilStyles.headingLg}>
