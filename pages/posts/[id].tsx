@@ -25,13 +25,13 @@ export default function Post({
         {desc && (
           <>
             <meta name="description" content={desc} />
-            <meta name="og:description" content={desc} />
+            <meta property="og:description" content={desc} />
           </>
         )}
         {image && (
           <>
-            <meta name="og:image" content={image} />
             <meta name="twitter:card" content="summary_large_image" />
+            <meta property="og:image" content={image} />
           </>
         )}
       </Head>
