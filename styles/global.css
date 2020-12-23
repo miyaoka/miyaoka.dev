@@ -50,3 +50,9 @@ code {
   color: #666;
   padding: 0.1em 0.4em;
 }
+
+h1,
+h2,
+h3 {
+  font-feature-settings: 'palt' 1;
+}
