@@ -48,11 +48,12 @@ export default function Layout({
           href="/favicon-16x16.png"
         />
         <link rel="manifest" href="/site.webmanifest" />
-        <meta name="og:image" content="/images/ogp.png" />
-        <meta name="twitter:card" content="summary" />
         <meta name="description" content={siteDesc} />
-        <meta name="og:description" content={siteDesc} />
-        <meta name="og:title" content={siteTitle} />
+        <meta name="twitter:card" content="summary" />
+        <meta property="og:site_name" content="miyaoka.dev" />
+        <meta property="og:image" content="/images/ogp.png" />
+        <meta property="og:description" content={siteDesc} />
+        <meta property="og:title" content={siteTitle} />
       </Head>
       <header className={styles.header}>
         <h1 className={utilStyles.headingLg}>
