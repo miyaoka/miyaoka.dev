@@ -22,7 +22,7 @@
 
 .headingMd {
   font-size: 1.2rem;
-  line-height: 1.5;
+  line-height: 1.2;
 }
 
 .borderCircle {
@@ -53,4 +53,9 @@
 
 .text {
   color: #333;
+}
+
+.desc {
+  font-size: 0.8rem;
+  line-height: 1.1;
 }
