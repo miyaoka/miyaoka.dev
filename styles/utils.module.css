@@ -59,3 +59,21 @@
   font-size: 0.8rem;
   line-height: 1.1;
 }
+
+.share {
+  margin-top: 60px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.share a {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: #333;
+  font-size: 12px;
+}
+.share img {
+  width: 40px;
+  height: 40px;
+}

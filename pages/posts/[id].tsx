@@ -9,6 +9,7 @@ export default function Post({
   postData,
 }: {
   postData: {
+    id: string
     title: string
     date: string
     contentHtml: string
@@ -16,7 +17,7 @@ export default function Post({
     image?: string
   }
 }) {
-  const { title, date, contentHtml, desc, image } = postData
+  const { id, title, date, contentHtml, desc, image } = postData
   return (
     <Layout>
       <Head>
@@ -53,6 +54,16 @@ export default function Post({
           dangerouslySetInnerHTML={{ __html: contentHtml }}
         />
       </article>
+      <div className={utilStyles.share}>
+        <a
+          href={`https://twitter.com/intent/tweet?text=${title}%0ahttps://miyaoka.dev/posts/${id}`}
+          target="_blank"
+          rel="noopener"
+        >
+          <img src="/images/twitter-outline.svg" alt="share" />
+          share
+        </a>
+      </div>
     </Layout>
   )
 }
