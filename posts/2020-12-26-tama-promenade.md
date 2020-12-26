@@ -30,9 +30,10 @@ https://i.imgur.com/dH6usao.jpg
 https://i.imgur.com/G68x6qs.png
 いろんな形状の橋がある
 
-https://i.imgur.com/errFLGk.png
-
 多摩ニュータウンでは歩車分離が徹底されすぎたため、住民が車を使いづらくて不便という反省点も出ているという。ただ、そのために陸橋から見下ろす車道は人影が少なく、独特な景観を作っていて面白い感じがする。
+
+https://i.imgur.com/errFLGk.png
+無人感がいい
 
 https://i.imgur.com/HlCOVLF.png
 
