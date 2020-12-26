@@ -17,11 +17,11 @@ export async function getSortedPostsData() {
       // Remove ".md" from file name to get id
       const id = fileName.replace(/\.md$/, '')
 
+      const { contentHtml, ...metaData } = await getContent(fileName)
       // Combine the data with the id
       return {
         id,
-        ...((await getContent(fileName)) as {
-          contentHtml: string
+        ...(metaData as {
           date: string
         }),
       }
