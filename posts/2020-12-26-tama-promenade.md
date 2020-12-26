@@ -9,7 +9,11 @@ https://i.imgur.com/eJFCEaF.png
 
 このバス停は[シャニマスの浅倉透](https://shinycolors.idolmaster.jp/idol/noctchill/toru.html)登場シーンの背景だ。橋が特徴的なので分かりやすい。
 
+https://i.imgur.com/k6AaH1p.png
+だが 40 分も来ないほど辺鄙な場所ではない
+
 https://i.imgur.com/AN3vkBt.png
+右手の階段を上ったところ
 
 多摩ニュータウンは徹底的に歩車分離を行って作られた街なので、車道と交わらないように歩道や住宅は上のレイヤーにある。
 
