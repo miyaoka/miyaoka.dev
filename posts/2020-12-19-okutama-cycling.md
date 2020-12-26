@@ -1,8 +1,6 @@
 ---
 title: '奥多摩サイクリング'
 date: '2020-12-19'
-desc: 友人らと 3 人で奥多摩まで行った。チャリで。
-image: https://i.imgur.com/ryfQfoX.jpg
 ---
 
 https://i.imgur.com/ryfQfoX.jpg

@@ -1,8 +1,6 @@
 ---
 title: 'imgur画像を最適に出力するHTML'
 date: '2020-12-22'
-desc: ブログの画像は imgur を使うことにしたが、そのためにいくつか工夫をした。
-image: https://i.imgur.com/uMW8N5J.png
 ---
 
 ブログの画像は imgur を使うことにしたが、そのためにいくつか工夫をした。
