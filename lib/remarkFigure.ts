@@ -57,7 +57,7 @@ const getPicture = (imgSrc: string, srcset?: string, caption?: string) => {
 
   if (srcset == null) return imgTag
   return `<picture>
-<source type="image/webp" sizes="640px" srcset="${srcset}">
+<source type="image/webp" sizes="(max-width: 320px) 320px, (max-width: 640px) 640px, 640px" srcset="${srcset}">
 ${imgTag}
 </picture>`
 }
