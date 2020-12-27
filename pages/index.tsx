@@ -35,8 +35,8 @@ export default function Home({
       <section>
         <ul className="grid gap-y-4">
           {allPostsData.map(({ id, date, title, desc, image }) => (
-            <li key={id} className="flex gap-x-4 ">
-              <div className="thumb flex-shrink-0">
+            <li key={id} className="flex">
+              <div className="thumb flex-shrink-0 mr-4">
                 {image && (
                   <img
                     src={getThumbPath(image)}
