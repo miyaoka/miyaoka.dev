@@ -46,7 +46,7 @@ export default class MyDocument extends Document {
           />
           <link rel="manifest" href="/site.webmanifest" />
         </Head>
-        <body>
+        <body className="pt-10 pb-20">
           <Main />
           <NextScript />
         </body>

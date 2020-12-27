@@ -21,26 +21,26 @@
     @apply hover:opacity-70;
   }
   article {
-    h2 {
-      @apply text-xl;
-    }
-    h3 {
-      @apply text-lg;
-    }
-    h4 {
-    }
-
     h2,
     h3,
     h4 {
-      @apply font-bold my-4;
+      @apply font-bold mt-8 mb-4;
+    }
+    h2 {
+      @apply text-2xl;
+    }
+    h3 {
+      @apply text-xl;
+    }
+    h4 {
+      @apply text-lg;
     }
     p {
       @apply my-4 text-base;
     }
     ol,
     ul {
-      @apply list-disc my-4 pl-10;
+      @apply list-disc my-4 pl-10 text-base;
     }
 
     figure {

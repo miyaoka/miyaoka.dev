@@ -26,7 +26,7 @@ export default function Layout({
   home?: boolean
 }) {
   return (
-    <div className="max-w-screen-sm my-10 mx-auto justify-center px-2">
+    <div className="max-w-screen-sm mx-auto justify-center px-4">
       <Head>
         <meta name="description" key="description" content={siteDesc} />
         <meta name="twitter:card" key="twitter:card" content="summary" />
