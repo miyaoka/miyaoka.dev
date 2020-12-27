@@ -4,6 +4,7 @@ import Head from 'next/head'
 import Date from '../../components/date'
 
 import { GetStaticProps, GetStaticPaths } from 'next'
+import { useEffect } from 'react'
 
 export default function Post({
   postData,
@@ -18,6 +19,21 @@ export default function Post({
   }
 }) {
   const { id, title, date, contentHtml, desc, image } = postData
+
+  useEffect(() => {
+    // @ts-ignore
+    if (typeof twttr !== 'undefined') {
+      // @ts-ignore
+      twttr.widgets.load()
+    } else {
+      const s = document.createElement('script')
+      s.setAttribute('src', 'https://platform.twitter.com/widgets.js')
+      s.setAttribute('async', 'true')
+      s.setAttribute('charset', 'utf-8')
+      document.head.appendChild(s)
+    }
+  }, [])
+
   return (
     <Layout>
       <Head>
