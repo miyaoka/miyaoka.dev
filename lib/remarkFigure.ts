@@ -2,6 +2,7 @@ import isUrl from 'is-url'
 import visit from 'unist-util-visit-parents'
 import convert from 'unist-util-is/convert'
 import { Node } from 'unist'
+import { getImgurSrc, getImgurThumb, thumbMap } from './imgur'
 
 const isImgExt = (value: string) => /\.(svg|png|jpg|jpeg|gif)$/.test(value)
 const isAbsolutePath = (value: string) => value.startsWith('/')
@@ -33,30 +34,18 @@ const isParentInteractive = (parents: Node[]): boolean => {
 }
 
 const getOptimizedPath = (imgPath: string) => {
-  const matched = imgPath.match(/^(https:\/\/i\.imgur\.com\/)(.+)(\.[^.]+)/)
-  if (matched == null) return { imgSrc: imgPath }
-  const [_, host, imgId, ext] = matched
-
-  const thumbs = [
-    {
-      size: 1024,
-      suffix: 'h',
-    },
-    {
-      size: 640,
-      suffix: 'l',
-    },
-    {
-      size: 320,
-      suffix: 'm',
-    },
-  ]
-  const srcset = thumbs
-    .map(({ size, suffix }) => `${host}${imgId}${suffix}.webp ${size}w`)
+  const imgurSrc = getImgurSrc(imgPath)
+  if (imgurSrc == null) return { imgSrc: imgPath }
+  const { id, ext } = imgurSrc
+  const types = ['h', 'l', 'm'] as const
+  const srcset = types
+    .map((type) => {
+      return `${getImgurThumb(id, type)} ${thumbMap[type]}w`
+    })
     .join(',')
 
   return {
-    imgSrc: `${host}${imgId}l${ext}`,
+    imgSrc: getImgurThumb(id, 'l', ext),
     srcset,
   }
 }
@@ -68,8 +57,7 @@ const getPicture = (imgSrc: string, srcset?: string, caption?: string) => {
 
   if (srcset == null) return imgTag
   return `<picture>
-<source type="image/webp"
-        srcset="${srcset}">
+<source type="image/webp" sizes="640px" srcset="${srcset}">
 ${imgTag}
 </picture>`
 }
