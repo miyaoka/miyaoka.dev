@@ -2,7 +2,7 @@ import Layout from '../../components/layout'
 import { getAllPostIds, getPostData } from '../../lib/posts'
 import Head from 'next/head'
 import Date from '../../components/date'
-import utilStyles from '../../styles/utils.module.css'
+
 import { GetStaticProps, GetStaticPaths } from 'next'
 
 export default function Post({
@@ -45,22 +45,27 @@ export default function Post({
         )}
       </Head>
       <article>
-        <h1 className={utilStyles.headingXl}>{title}</h1>
-        <div className={utilStyles.lightText}>
+        <small className="text-gray-500">
           <Date dateString={date} />
-        </div>
+        </small>
+        <h1 className="text-3xl font-bold my-2">{title}</h1>
         <div
-          className={utilStyles.text}
+          className="my-10"
           dangerouslySetInnerHTML={{ __html: contentHtml }}
         />
       </article>
-      <div className={utilStyles.share}>
+      <div className="flex justify-center">
         <a
           href={`https://twitter.com/intent/tweet?text=${title}%0ahttps://miyaoka.dev/posts/${id}`}
           target="_blank"
           rel="noopener"
+          className="flex items-center flex-col"
         >
-          <img src="/images/twitter-outline.svg" alt="share" />
+          <img
+            src="/images/twitter-outline.svg"
+            className="h-10 w-10"
+            alt="share"
+          />
           share
         </a>
       </div>

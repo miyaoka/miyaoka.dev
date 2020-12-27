@@ -40,22 +40,24 @@ const getOptimizedPath = (imgPath: string) => {
   const thumbs = [
     {
       size: 1024,
-      suffix: 'h'
+      suffix: 'h',
     },
     {
       size: 640,
-      suffix: 'l'
+      suffix: 'l',
     },
     {
       size: 320,
-      suffix: 'm'
+      suffix: 'm',
     },
   ]
-  const srcset = thumbs.map(({ size, suffix }) => `${host}${imgId}${suffix}.webp ${size}w`).join(',')
+  const srcset = thumbs
+    .map(({ size, suffix }) => `${host}${imgId}${suffix}.webp ${size}w`)
+    .join(',')
 
   return {
     imgSrc: `${host}${imgId}l${ext}`,
-    srcset
+    srcset,
   }
 }
 
