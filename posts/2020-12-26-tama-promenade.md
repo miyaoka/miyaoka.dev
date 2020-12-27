@@ -21,8 +21,14 @@ https://i.imgur.com/KQgfAlv.png
 
 歩道が車道と交わるところには各所に陸橋やアンダーパスが設けられている。このため住宅から駅までずっと歩道だけで歩いていくことができるし、総延長は 41km に及ぶらしい。
 
+https://i.imgur.com/kpnNPWQ.jpg
+何度か巡っているが緑が多くて迷いやすい
+
 https://i.imgur.com/L04fGyO.jpg
 都心の暗渠の緑道みたいな道がずっと続いてる
+
+https://i.imgur.com/qKuONYy.jpg
+公園に隣接してたり、道自体が公園っぽかったりする
 
 https://i.imgur.com/dH6usao.jpg
 基本的に歩道は車道の上だが、たまにアンダーパスもある
@@ -33,14 +39,10 @@ https://i.imgur.com/G68x6qs.png
 多摩ニュータウンでは歩車分離が徹底されすぎたため、住民が車を使いづらくて不便という反省点も出ているという。ただ、そのために陸橋から見下ろす車道は人影が少なく、独特な景観を作っていて面白い感じがする。
 
 https://i.imgur.com/errFLGk.png
-無人感がいい
+山の稜線が見渡せたり、無人感がいい
 
 https://i.imgur.com/HlCOVLF.png
+秋の景色
 
 https://i.imgur.com/stZ2R2p.png
 歩道に上るまで大変なところもある
-
-https://i.imgur.com/qKuONYy.jpg
-
-https://i.imgur.com/kpnNPWQ.jpg
-何度か巡っているが緑が多くて迷いやすい
