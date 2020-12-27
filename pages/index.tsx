@@ -38,11 +38,15 @@ export default function Home({
             <li key={id} className="flex">
               <div className="thumb flex-shrink-0 mr-4">
                 {image && (
-                  <img
-                    src={getThumbPath(image)}
-                    className="rounded-full"
-                    loading="lazy"
-                  />
+                  <Link href={`/posts/${id}`}>
+                    <a>
+                      <img
+                        src={getThumbPath(image)}
+                        className="rounded-full"
+                        loading="lazy"
+                      />
+                    </a>
+                  </Link>
                 )}
               </div>
               <div>
