@@ -6,7 +6,8 @@ import { Node } from 'unist'
 const isAbsolutePath = (value: string) => value.startsWith('/')
 const isRelativePath = (value: string) =>
   value.startsWith('./') || value.startsWith('../')
-const isImgPath = (value: string) => isAbsolutePath(value) || isRelativePath(value)
+const isImgPath = (value: string) =>
+  isAbsolutePath(value) || isRelativePath(value)
 // @ts-ignore
 const isInteractive = convert(['link', 'linkReference'])
 
@@ -18,8 +19,7 @@ function transform(tree: Node) {
   visit(tree, 'text', ontext)
 }
 
-function ontext<V extends Node>(node: V,
-  parents: Node[]) {
+function ontext<V extends Node>(node: V, parents: Node[]) {
   const value = String(node.value).trim()
 
   const lines = value.split('\n')
@@ -27,7 +27,7 @@ function ontext<V extends Node>(node: V,
   if (lines.length > 2) return
   const [linkPath, caption] = lines
 
-  if ((isUrl(linkPath) || isImgPath(linkPath))) {
+  if (isUrl(linkPath) || isImgPath(linkPath)) {
     let interactive = false
     let length = parents.length
     const siblings = parents[length - 1].children as Node[]
@@ -44,7 +44,11 @@ function ontext<V extends Node>(node: V,
     const link = {
       type: 'html',
       position: node.position,
-      value: `<a href="${linkPath}" target="_blank" rel="noopener">${caption ?? linkPath}</a>`
+      value: `<a href="${linkPath}" target="_blank" rel="noopener">${
+        caption ?? linkPath
+      }
+      ${caption && `<small>${linkPath}</small>`}
+      </a>`,
     }
 
     siblings[siblings.indexOf(node)] = link

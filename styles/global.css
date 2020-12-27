@@ -1,58 +1,63 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  line-height: 1.6;
-  font-size: 18px;
-  overflow-wrap: break-word;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .font-palt {
+    font-feature-settings: 'palt' 1;
+  }
 }
 
-* {
-  box-sizing: border-box;
-}
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-palt;
+  }
+  a {
+    @apply hover:opacity-70;
+  }
+  article {
+    h2 {
+      @apply text-xl;
+    }
+    h3 {
+      @apply text-lg;
+    }
+    h4 {
+    }
 
-a {
-  color: #0070f3;
-  text-decoration: none;
-}
+    h2,
+    h3,
+    h4 {
+      @apply font-bold my-4;
+    }
+    p {
+      @apply my-4 text-base;
+    }
+    ol,
+    ul {
+      @apply list-disc my-4 pl-10;
+    }
 
-a:hover {
-  text-decoration: underline;
-}
+    figure {
+      @apply flex flex-col items-center;
+    }
+    figcaption {
+      @apply text-sm text-gray-500 my-1;
+    }
+    figure a {
+      @apply hover:opacity-100;
+    }
 
-article img {
-  max-width: 100%;
-  display: block;
-}
-
-figure {
-  margin: 1em 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-figcaption {
-  font-size: 14px;
-  color: #666;
-  margin: 4px;
-}
-
-figure a,
-figure img {
-  width: 100%;
-}
-
-code {
-  background-color: #eee;
-  color: #666;
-  padding: 0.1em 0.4em;
-}
-
-h1,
-h2,
-h3 {
-  font-feature-settings: 'palt' 1;
+    a {
+      @apply text-blue-600;
+    }
+    a small {
+      @apply text-xs text-gray-400 block overflow-ellipsis whitespace-nowrap overflow-hidden;
+    }
+  }
 }

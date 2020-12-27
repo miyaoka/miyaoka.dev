@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Layout, { siteTitle } from '../components/layout'
-import utilStyles from '../styles/utils.module.css'
+
 import { getSortedPostsData } from '../lib/posts'
 import Link from 'next/link'
 import Date from '../components/date'
@@ -21,25 +21,19 @@ export default function Home({
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className={utilStyles.headingMd}></section>
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        {/* <h2 className={utilStyles.headingLg}>Blog</h2> */}
-        <ul className={utilStyles.list}>
+      <section>
+        <ul className="grid gap-y-4">
           {allPostsData.map(({ id, date, title, desc }) => (
-            <li className={utilStyles.listItem} key={id}>
-              <Link href={`/posts/${id}`}>
-                <a>{title}</a>
-              </Link>
-              <br />
-              <small className={`${utilStyles.lightText} ${utilStyles.desc}`}>
+            <li key={id} className="">
+              <small className="text-gray-500">
                 <Date dateString={date} />
               </small>
-              <br />
-              {desc && (
-                <small className={`${utilStyles.lightText} ${utilStyles.desc}`}>
-                  {desc}
-                </small>
-              )}
+              <h2 className="text-lg font-bold">
+                <Link href={`/posts/${id}`}>
+                  <a>{title}</a>
+                </Link>
+              </h2>
+              {desc && <small className="text-gray-500">{desc}</small>}
             </li>
           ))}
         </ul>

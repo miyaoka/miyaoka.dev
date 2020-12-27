@@ -1,6 +1,4 @@
 import Head from 'next/head'
-import styles from './layout.module.css'
-import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
 
 export const siteTitle = 'miyaoka.dev'
@@ -28,7 +26,7 @@ export default function Layout({
   home?: boolean
 }) {
   return (
-    <div className={styles.container}>
+    <div className="max-w-screen-sm my-10 mx-auto justify-center px-2">
       <Head>
         <meta name="description" key="description" content={siteDesc} />
         <meta name="twitter:card" key="twitter:card" content="summary" />
@@ -49,13 +47,11 @@ export default function Layout({
         />
         <meta property="og:title" key="og:title" content={siteTitle} />
       </Head>
-      <header className={styles.header}>
-        <h1 className={utilStyles.headingLg}>
-          <Link href="/">
-            <a className={utilStyles.colorInherit}>{siteTitle}</a>
-          </Link>
-        </h1>
-        <div className={styles.headLinks}>
+      <header className="flex">
+        <Link href="/">
+          <a className="text-lg font-bold">{siteTitle}</a>
+        </Link>
+        <div className="flex-grow flex justify-end">
           {linkList.map((link) => {
             return (
               <a
@@ -65,13 +61,13 @@ export default function Layout({
                 target="_blank"
                 rel="noopener"
               >
-                <img src={link.img} alt={link.title} />
+                <img className="h-8 w-8" src={link.img} alt={link.title} />
               </a>
             )
           })}
         </div>
       </header>
-      <main className={styles.main}>{children}</main>
+      <main className="mt-20">{children}</main>
     </div>
   )
 }
