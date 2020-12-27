@@ -35,27 +35,26 @@ export default function Home({
       <section>
         <ul className="grid gap-y-4">
           {allPostsData.map(({ id, date, title, desc, image }) => (
-            <li key={id} className="">
-              <div className="flex">
+            <li key={id} className="flex gap-x-4 ">
+              <div className="thumb flex-shrink-0">
                 {image && (
                   <img
                     src={getThumbPath(image)}
-                    className="thumb absolute rounded-full"
+                    className="rounded-full"
                     loading="lazy"
                   />
                 )}
-
-                <div className="ml-24">
-                  <small className="text-gray-500">
-                    <Date dateString={date} />
-                  </small>
-                  <h2 className="text-lg font-bold">
-                    <Link href={`/posts/${id}`}>
-                      <a>{title}</a>
-                    </Link>
-                  </h2>
-                  {desc && <small className="text-gray-500">{desc}</small>}
-                </div>
+              </div>
+              <div>
+                <small className="text-gray-500">
+                  <Date dateString={date} />
+                </small>
+                <h2 className="text-lg font-bold">
+                  <Link href={`/posts/${id}`}>
+                    <a>{title}</a>
+                  </Link>
+                </h2>
+                {desc && <small className="text-gray-500">{desc}</small>}
               </div>
             </li>
           ))}
