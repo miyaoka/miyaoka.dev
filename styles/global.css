@@ -46,6 +46,9 @@
     ul {
       @apply list-disc my-4 pl-10 text-base;
     }
+    blockquote {
+      @apply border-gray-500 border-l-2 text-gray-500 pl-4;
+    }
 
     figure {
       @apply flex flex-col items-center;
