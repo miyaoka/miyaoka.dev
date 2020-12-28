@@ -25,6 +25,11 @@ export default function Layout({
   children: React.ReactNode
   home?: boolean
 }) {
+  const siteTitleElement = (
+    <Link href="/">
+      <a className="text-lg font-bold">{siteTitle}</a>
+    </Link>
+  )
   return (
     <div className="max-w-screen-sm mx-auto justify-center px-4">
       <Head>
@@ -48,9 +53,8 @@ export default function Layout({
         <meta property="og:title" key="og:title" content={siteTitle} />
       </Head>
       <header className="flex sticky top-0 bg-white py-4">
-        <Link href="/">
-          <a className="text-lg font-bold">{siteTitle}</a>
-        </Link>
+        {home ? <h1>{siteTitleElement}</h1> : siteTitleElement}
+
         <div className="flex-grow flex justify-end">
           {linkList.map((link) => {
             return (
