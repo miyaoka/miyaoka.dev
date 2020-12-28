@@ -81,6 +81,7 @@ export default function Post({
             src="/images/twitter-outline.svg"
             className="h-10 w-10"
             alt="share"
+            loading="lazy"
           />
           share
         </a>
