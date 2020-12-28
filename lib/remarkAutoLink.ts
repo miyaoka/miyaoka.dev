@@ -47,7 +47,7 @@ function ontext<V extends Node>(node: V, parents: Node[]) {
       value: `<a href="${linkPath}" target="_blank" rel="noopener">${
         caption ?? linkPath
       }
-      ${caption && `<small>${linkPath}</small>`}
+      ${caption ? `<small>${linkPath}</small>` : ''}
       </a>`,
     }
 
