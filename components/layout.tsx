@@ -17,7 +17,7 @@ export default function Layout({
     </Link>
   )
   return (
-    <div className="max-w-screen-sm mx-auto justify-center px-4">
+    <div className="max-w-screen-sm mx-auto justify-center px-4 sm:px-0">
       <Head>
         <meta name="description" key="description" content={siteDesc} />
         <meta name="twitter:card" key="twitter:card" content="summary" />
