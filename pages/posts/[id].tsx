@@ -72,7 +72,7 @@ export default function Post({
       </article>
       <div className="flex justify-center">
         <a
-          href={`https://twitter.com/intent/tweet?text=${title}%0ahttps://miyaoka.dev/posts/${id}`}
+          href={`https://twitter.com/intent/tweet?text="${title}"%0ahttps://miyaoka.dev/posts/${id}`}
           target="_blank"
           rel="noopener"
           className="flex items-center flex-col"
