@@ -4,20 +4,6 @@ import Link from 'next/link'
 export const siteTitle = 'miyaoka.dev'
 const siteDesc = 'miyaokaの備忘録'
 
-const linkList = [
-  {
-    title: 'twitter',
-    img: '/images/twitter-outline.svg',
-    url: 'https://twitter.com/miyaoka',
-  },
-
-  {
-    title: 'GitHub',
-    img: '/images/github-outline.svg',
-    url: 'https://github.com/miyaoka/miyaoka.dev',
-  },
-]
-
 export default function Layout({
   children,
   home,
@@ -54,24 +40,8 @@ export default function Layout({
       </Head>
       <header className="flex sticky top-0 bg-white py-4">
         {home ? <h1>{siteTitleElement}</h1> : siteTitleElement}
-
-        <div className="flex-grow flex justify-end">
-          {linkList.map((link) => {
-            return (
-              <a
-                key={link.url}
-                href={link.url}
-                title={link.title}
-                target="_blank"
-                rel="noopener"
-              >
-                <img className="h-8 w-8" src={link.img} alt={link.title} />
-              </a>
-            )
-          })}
-        </div>
       </header>
-      <main className="mt-20">{children}</main>
+      <main>{children}</main>
     </div>
   )
 }

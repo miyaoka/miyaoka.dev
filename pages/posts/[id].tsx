@@ -60,7 +60,7 @@ export default function Post({
           </>
         )}
       </Head>
-      <article>
+      <article className="mt-4">
         <small className="text-gray-500">
           <Date dateString={date} />
         </small>

@@ -16,6 +16,20 @@ const getThumbPath = (imgPath: string) => {
   return getImgurThumb(removedSuffixId, 'b', ext)
 }
 
+const linkList = [
+  {
+    title: 'twitter',
+    img: '/images/twitter-outline.svg',
+    url: 'https://twitter.com/miyaoka',
+  },
+
+  {
+    title: 'GitHub',
+    img: '/images/github-outline.svg',
+    url: 'https://github.com/miyaoka/miyaoka.dev',
+  },
+]
+
 export default function Home({
   allPostsData,
 }: {
@@ -32,7 +46,22 @@ export default function Home({
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section>
+      <div className="flex" title="profile">
+        {linkList.map((link) => {
+          return (
+            <a
+              key={link.url}
+              href={link.url}
+              title={link.title}
+              target="_blank"
+              rel="noopener"
+            >
+              <img className="h-10 w-10" src={link.img} alt={link.title} />
+            </a>
+          )
+        })}
+      </div>
+      <section className="mt-20">
         <ul className="grid gap-y-4">
           {allPostsData.map(({ id, date, title, desc, image }) => (
             <li key={id} className="flex">
