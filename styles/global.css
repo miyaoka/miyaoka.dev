@@ -47,7 +47,7 @@
       @apply list-disc my-4 pl-10 text-base;
     }
     blockquote {
-      @apply border-gray-500 border-l-2 text-gray-500 pl-4;
+      @apply border-gray-300 border-l-4 text-gray-500 p-1 pl-4 bg-gray-50;
     }
 
     figure {
