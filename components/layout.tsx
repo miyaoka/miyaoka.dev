@@ -47,7 +47,7 @@ export default function Layout({
         />
         <meta property="og:title" key="og:title" content={siteTitle} />
       </Head>
-      <header className="flex">
+      <header className="flex sticky top-0 bg-white py-4">
         <Link href="/">
           <a className="text-lg font-bold">{siteTitle}</a>
         </Link>
