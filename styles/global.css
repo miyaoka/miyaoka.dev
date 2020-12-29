@@ -44,7 +44,10 @@
     }
     ol,
     ul {
-      @apply list-disc my-4 pl-10 text-base;
+      @apply list-disc my-4 pl-6 text-base;
+    }
+    li {
+      @apply my-1;
     }
     blockquote:not(.twitter-tweet) {
       @apply border-gray-300 border-l-4 text-gray-500 p-1 pl-4 bg-gray-50;
