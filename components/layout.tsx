@@ -13,7 +13,12 @@ export default function Layout({
 }) {
   const siteTitleElement = (
     <Link href="/">
-      <a className="text-lg font-bold">{siteTitle}</a>
+      <a
+        className="text-lg font-bold"
+        style={{ fontFamily: 'Audiowide, cursive' }}
+      >
+        {siteTitle}
+      </a>
     </Link>
   )
   return (
@@ -37,6 +42,11 @@ export default function Layout({
           content={siteDesc}
         />
         <meta property="og:title" key="og:title" content={siteTitle} />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap"
+          rel="stylesheet"
+        ></link>
       </Head>
       <header className="flex sticky top-0 bg-white py-4">
         {home ? <h1>{siteTitleElement}</h1> : siteTitleElement}
