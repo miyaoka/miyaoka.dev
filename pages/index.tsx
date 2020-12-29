@@ -64,7 +64,7 @@ export default function Home({
       <section className="mt-20">
         <ul className="grid gap-y-4">
           {allPostsData.map(({ id, date, title, desc, image }) => (
-            <li key={id} className="flex">
+            <li key={id} className="flex items-center">
               <div className="thumb flex-shrink-0 mr-4">
                 {image && (
                   <Link href={`/posts/${id}`}>
