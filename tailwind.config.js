@@ -4,6 +4,7 @@ module.exports = {
   theme: {
     fontFamily: {
       body: [
+        'Noto Sans JP',
         'Avenir',
         'Helvetica Neue',
         'Helvetica',

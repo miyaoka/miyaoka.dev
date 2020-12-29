@@ -44,9 +44,9 @@ export default function Layout({
         <meta property="og:title" key="og:title" content={siteTitle} />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Audiowide&family=Noto+Sans+JP:wght@400;700&display=swap"
           rel="stylesheet"
-        ></link>
+        />
       </Head>
       <header className="flex sticky top-0 bg-white py-4">
         {home ? <h1>{siteTitleElement}</h1> : siteTitleElement}
