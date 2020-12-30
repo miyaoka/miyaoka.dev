@@ -69,7 +69,7 @@ export default function Home({
                     <a title={title}>
                       <img
                         src={getThumbPath(image)}
-                        className="rounded-full"
+                        className="border border-gray-300  rounded-full"
                         loading="lazy"
                         title={title}
                       />
