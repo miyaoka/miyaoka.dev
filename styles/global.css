@@ -49,6 +49,9 @@
     li {
       @apply my-1;
     }
+    iframe {
+      @apply max-w-full;
+    }
     blockquote:not(.twitter-tweet) {
       @apply border-gray-300 border-l-4 text-gray-500 p-1 pl-4 bg-gray-50;
     }
