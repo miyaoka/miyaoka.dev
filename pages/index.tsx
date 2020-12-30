@@ -87,7 +87,11 @@ export default function Home({
                     <a>{title}</a>
                   </Link>
                 </h2>
-                {desc && <small className="text-gray-500">{desc}</small>}
+                {desc && (
+                  <div className="text-gray-500 text-sm leading-snug">
+                    {desc}
+                  </div>
+                )}
               </div>
             </li>
           ))}
