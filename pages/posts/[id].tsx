@@ -1,10 +1,11 @@
+import { useEffect } from 'react'
+import { GetStaticProps, GetStaticPaths } from 'next'
+import Head from 'next/head'
+import { Twitter } from 'react-feather'
+
 import Layout from '../../components/layout'
 import { getAllPostIds, getPostData } from '../../lib/posts'
-import Head from 'next/head'
 import DateTime from '../../components/dateTime'
-
-import { GetStaticProps, GetStaticPaths } from 'next'
-import { useEffect } from 'react'
 
 export default function Post({
   postData,
@@ -76,13 +77,9 @@ export default function Post({
           target="_blank"
           rel="noopener"
           className="flex items-center flex-col"
+          title="Share on Twitter"
         >
-          <img
-            src="/images/twitter-outline.svg"
-            className="h-10 w-10"
-            alt="share"
-            loading="lazy"
-          />
+          <Twitter className="h-10 w-10" />
           share
         </a>
       </div>
