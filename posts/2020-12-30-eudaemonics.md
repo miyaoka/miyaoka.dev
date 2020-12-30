@@ -56,9 +56,15 @@ https://i.imgur.com/0Dqa29r.png
 
 シャニマス世界の人々は誕生日を迎えても歳を取らないが、シナリオは続いており展開が気になる。
 
-https://i.imgur.com/N8PSTq9.png
-そうじゃないだろ〜と言う人には露骨に嫌悪を示す
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">1月1日より、ノクチルの皆さんの物語を描いたシナリオイベント「海へ出るつもりじゃなかったし」が始まりますよ～。<br>イベントの予告動画をご覧ください♪<a href="https://twitter.com/hashtag/%E3%82%B7%E3%83%A3%E3%83%8B%E3%83%9E%E3%82%B9?src=hash&amp;ref_src=twsrc%5Etfw">#シャニマス</a> <a href="https://twitter.com/hashtag/idolmaster?src=hash&amp;ref_src=twsrc%5Etfw">#idolmaster</a> <a href="https://t.co/CBU9Zt2bbW">pic.twitter.com/CBU9Zt2bbW</a></p>&mdash; アイドルマスター シャイニーカラーズ公式 (@imassc_official) <a href="https://twitter.com/imassc_official/status/1343799408652034048?ref_src=twsrc%5Etfw">December 29, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+正月に始まるノクチルイベントも相変わらずロックそうだ。
+
+[「……マンモクスン」「うん」 「氷河期氷河期～ ♪」](https://twitter.com/imassc_official/status/1318145116247293960) なやり取りもわけが分からなすぎる。
 
 そんなノクチルの市川雛菜は他のメンバーが居残り練習していてもそれに付き合わず、そこに後ろめたさを感じることもない。プロデューサーから見て不安になるところだが、自身がしあわせであることが他者にとってもしあわせになるという確固たる信念を貫いている。
+
+https://i.imgur.com/N8PSTq9.png
+そうじゃないだろ〜と言う人には露骨に嫌悪を示す
 
 これはアルストロメリアの幸福論とは違った形ではあると思うが、アルストロメリアもノクチルもその他アイドルも、見せるのは信念でありその生き様、強度なんだろうなと感じている。
