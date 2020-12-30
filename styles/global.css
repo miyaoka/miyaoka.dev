@@ -24,13 +24,8 @@
   a {
     @apply hover:opacity-70;
   }
+}
 
-  article {
-    blockquote:not(.twitter-tweet) {
-      @apply border-gray-300 border-l-4 text-gray-500 p-1 pl-4 bg-gray-50;
-    }
-    blockquote.twitter-tweet {
-      @apply border border-gray-300 rounded-2xl bg-white p-4;
-    }
-  }
+article blockquote.twitter-tweet {
+  @apply border border-l border-gray-300 rounded-2xl bg-white p-4;
 }
