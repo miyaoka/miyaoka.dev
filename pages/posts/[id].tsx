@@ -6,6 +6,7 @@ import { Twitter } from 'react-feather'
 import Layout from '../../components/layout'
 import { getAllPostIds, getPostData } from '../../lib/posts'
 import DateTime from '../../components/dateTime'
+import styles from './post.module.css'
 
 export default function Post({
   postData,
@@ -61,7 +62,7 @@ export default function Post({
           </>
         )}
       </Head>
-      <article className="mt-4">
+      <article className={`${styles.article} mt-4`}>
         <small className="text-gray-500">
           <DateTime dateString={date} />
         </small>
