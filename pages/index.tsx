@@ -68,11 +68,12 @@ export default function Home({
               <div className="thumb flex-shrink-0 mr-4">
                 {image && (
                   <Link href={`/posts/${id}`}>
-                    <a>
+                    <a title={title}>
                       <img
                         src={getThumbPath(image)}
                         className="rounded-full"
                         loading="lazy"
+                        title={title}
                       />
                     </a>
                   </Link>
