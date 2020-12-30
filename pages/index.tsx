@@ -1,32 +1,29 @@
 import Head from 'next/head'
-import Layout, { siteTitle } from '../components/layout'
-
+import { Twitter, GitHub, Rss } from 'react-feather'
+import Layout from '../components/layout'
 import { getSortedPostsData } from '../lib/posts'
 import Link from 'next/link'
-import Date from '../components/date'
-import { getImgurSrc, getImgurThumb } from '../lib/imgur'
-
-const getThumbPath = (imgPath: string) => {
-  const imgurSrc = getImgurSrc(imgPath)
-  if (imgurSrc == null) return imgPath
-
-  const { id, ext } = imgurSrc
-  // md→html化でlをつけてしまうので取り除く
-  const removedSuffixId = id.replace(/l$/, '')
-  return getImgurThumb(removedSuffixId, 'b', ext)
-}
+import DateTime from '../components/dateTime'
+import { getThumbPath } from '../lib/imgur'
+import site from '../site.config.json'
 
 const linkList = [
   {
     title: 'twitter',
-    img: '/images/twitter-outline.svg',
     url: 'https://twitter.com/miyaoka',
+    comp: Twitter,
   },
 
   {
     title: 'GitHub',
-    img: '/images/github-outline.svg',
     url: 'https://github.com/miyaoka/miyaoka.dev',
+    comp: GitHub,
+  },
+
+  {
+    title: 'RSS',
+    url: `/${site.feedPath}`,
+    comp: Rss,
   },
 ]
 
@@ -44,10 +41,11 @@ export default function Home({
   return (
     <Layout home>
       <Head>
-        <title>{siteTitle}</title>
+        <title>{site.title}</title>
       </Head>
-      <div className="flex" title="profile">
+      <div className="inline-grid grid-flow-col gap-x-2" title="profile">
         {linkList.map((link) => {
+          const Icon = link.comp
           return (
             <a
               key={link.url}
@@ -56,7 +54,7 @@ export default function Home({
               target="_blank"
               rel="noopener"
             >
-              <img className="h-10 w-10" src={link.img} alt={link.title} />
+              <Icon className="h-8 w-8 text-red-300" />
             </a>
           )
         })}
@@ -81,7 +79,7 @@ export default function Home({
               </div>
               <div>
                 <small className="text-gray-500">
-                  <Date dateString={date} />
+                  <DateTime dateString={date} />
                 </small>
                 <h2 className="text-lg font-bold">
                   <Link href={`/posts/${id}`}>

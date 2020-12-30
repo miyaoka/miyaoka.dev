@@ -1,0 +1,8 @@
+{
+  "title": "miyaoka.dev",
+  "desc": "miyaokaの雑記帳",
+  "author": "miyaoka",
+  "host": "https://miyaoka.dev/",
+  "postsDir": "posts/",
+  "feedPath": "feed.xml"
+}
