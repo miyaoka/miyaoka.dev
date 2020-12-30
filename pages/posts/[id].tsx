@@ -38,7 +38,7 @@ export default function Post({
     <Layout>
       <Head>
         <title>{title}</title>
-        <meta name="og:title" content={title} />
+        <meta property="og:title" key="og:title" content={title} />
         {desc && (
           <>
             <meta name="description" key="description" content={desc} />
