@@ -52,7 +52,7 @@
     iframe {
       @apply max-w-full;
     }
-    blockquote:not(.twitter-tweet) {
+    blockquote {
       @apply border-gray-300 border-l-4 text-gray-500 p-1 pl-4 bg-gray-50;
     }
 
