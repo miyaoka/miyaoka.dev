@@ -9,7 +9,7 @@ import site from '../site.config.json'
 
 const linkList = [
   {
-    title: 'twitter',
+    title: 'Twitter',
     url: 'https://twitter.com/miyaoka',
     comp: Twitter,
   },
@@ -69,7 +69,7 @@ export default function Home({
                     <a title={title}>
                       <img
                         src={getThumbPath(image)}
-                        className="border border-gray-300  rounded-full"
+                        className="border border-red-300  rounded-full"
                         loading="lazy"
                         title={title}
                       />
