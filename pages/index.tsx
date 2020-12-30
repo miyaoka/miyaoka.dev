@@ -1,20 +1,11 @@
 import Head from 'next/head'
-import Layout, { siteTitle } from '../components/layout'
+import Layout from '../components/layout'
 
 import { getSortedPostsData } from '../lib/posts'
 import Link from 'next/link'
-import Date from '../components/date'
-import { getImgurSrc, getImgurThumb } from '../lib/imgur'
-
-const getThumbPath = (imgPath: string) => {
-  const imgurSrc = getImgurSrc(imgPath)
-  if (imgurSrc == null) return imgPath
-
-  const { id, ext } = imgurSrc
-  // md→html化でlをつけてしまうので取り除く
-  const removedSuffixId = id.replace(/l$/, '')
-  return getImgurThumb(removedSuffixId, 'b', ext)
-}
+import DateTime from '../components/dateTime'
+import { getThumbPath } from '../lib/imgur'
+import site from '../site.config.json'
 
 const linkList = [
   {
@@ -27,6 +18,12 @@ const linkList = [
     title: 'GitHub',
     img: '/images/github-outline.svg',
     url: 'https://github.com/miyaoka/miyaoka.dev',
+  },
+
+  {
+    title: 'RSS',
+    img: '/images/github-outline.svg',
+    url: `/${site.feedPath}`,
   },
 ]
 
@@ -44,7 +41,7 @@ export default function Home({
   return (
     <Layout home>
       <Head>
-        <title>{siteTitle}</title>
+        <title>{site.title}</title>
       </Head>
       <div className="flex" title="profile">
         {linkList.map((link) => {
@@ -81,7 +78,7 @@ export default function Home({
               </div>
               <div>
                 <small className="text-gray-500">
-                  <Date dateString={date} />
+                  <DateTime dateString={date} />
                 </small>
                 <h2 className="text-lg font-bold">
                   <Link href={`/posts/${id}`}>

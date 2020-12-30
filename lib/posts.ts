@@ -7,7 +7,8 @@ import { images } from './remarkFigure'
 import { links } from './remarkAutoLink'
 import externalLinks from 'remark-external-links'
 
-const postsDirectory = path.join(process.cwd(), 'posts')
+import { postsDir } from '../site.config.json'
+const postsDirectory = path.join(process.cwd(), postsDir)
 
 export async function getSortedPostsData() {
   // Get file names under /posts
@@ -22,7 +23,10 @@ export async function getSortedPostsData() {
       return {
         id,
         ...(metaData as {
+          title: string
           date: string
+          desc?: string
+          image?: string
         }),
       }
     })

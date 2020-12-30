@@ -1,7 +1,7 @@
 import Layout from '../../components/layout'
 import { getAllPostIds, getPostData } from '../../lib/posts'
 import Head from 'next/head'
-import Date from '../../components/date'
+import DateTime from '../../components/dateTime'
 
 import { GetStaticProps, GetStaticPaths } from 'next'
 import { useEffect } from 'react'
@@ -62,7 +62,7 @@ export default function Post({
       </Head>
       <article className="mt-4">
         <small className="text-gray-500">
-          <Date dateString={date} />
+          <DateTime dateString={date} />
         </small>
         <h1 className="text-3xl font-bold my-2">{title}</h1>
         <div

@@ -24,3 +24,13 @@ export const getImgurThumb = (
 ) => {
   return `${imgurHost}${id}${type}.${ext}`
 }
+
+export const getThumbPath = (imgPath: string) => {
+  const imgurSrc = getImgurSrc(imgPath)
+  if (imgurSrc == null) return imgPath
+
+  const { id, ext } = imgurSrc
+  // md→html化でlをつけてしまうので取り除く
+  const removedSuffixId = id.replace(/l$/, '')
+  return getImgurThumb(removedSuffixId, 'b', ext)
+}
