@@ -12,7 +12,7 @@ async function generate() {
     description: site.desc,
     feed_url: `${site.host}${site.feedPath}`,
     site_url: site.host,
-    image_url: `${site.host}images/ogp.png`,
+    image_url: `${site.host}ogp.png`,
     language: 'ja',
     custom_namespaces: {
       media: 'http://search.yahoo.com/mrss/',

@@ -1,6 +1,6 @@
 import Head from 'next/head'
+import { Twitter, GitHub, Rss } from 'react-feather'
 import Layout from '../components/layout'
-
 import { getSortedPostsData } from '../lib/posts'
 import Link from 'next/link'
 import DateTime from '../components/dateTime'
@@ -10,20 +10,20 @@ import site from '../site.config.json'
 const linkList = [
   {
     title: 'twitter',
-    img: '/images/twitter-outline.svg',
     url: 'https://twitter.com/miyaoka',
+    comp: Twitter,
   },
 
   {
     title: 'GitHub',
-    img: '/images/github-outline.svg',
     url: 'https://github.com/miyaoka/miyaoka.dev',
+    comp: GitHub,
   },
 
   {
     title: 'RSS',
-    img: '/images/github-outline.svg',
     url: `/${site.feedPath}`,
+    comp: Rss,
   },
 ]
 
@@ -43,8 +43,9 @@ export default function Home({
       <Head>
         <title>{site.title}</title>
       </Head>
-      <div className="flex" title="profile">
+      <div className="inline-grid grid-flow-col gap-x-2" title="profile">
         {linkList.map((link) => {
+          const Icon = link.comp
           return (
             <a
               key={link.url}
@@ -53,7 +54,7 @@ export default function Home({
               target="_blank"
               rel="noopener"
             >
-              <img className="h-10 w-10" src={link.img} alt={link.title} />
+              <Icon className="h-8 w-8 text-red-300" />
             </a>
           )
         })}
