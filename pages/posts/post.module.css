@@ -48,10 +48,10 @@
   }
 
   code {
-    @apply bg-gray-200 px-2 py-1 text-sm rounded;
+    @apply bg-gray-200 px-2 text-sm rounded;
   }
   pre {
-    @apply bg-gray-700 text-gray-300 p-4 rounded-lg;
+    @apply bg-gray-700 text-gray-300 p-4 rounded-lg whitespace-pre-wrap;
   }
   pre code {
     @apply bg-transparent text-xs p-0 leading-4 block;
