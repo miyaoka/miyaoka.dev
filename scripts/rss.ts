@@ -3,6 +3,7 @@ import RSS from 'rss'
 import { getSortedPostsData } from '../lib/posts'
 import site from '../site.config.json'
 import { getThumbPath } from '../lib/imgur'
+import { parseISO } from 'date-fns'
 
 async function generate() {
   const allPostsData = await getSortedPostsData()
@@ -30,7 +31,7 @@ async function generate() {
       title: post.title,
       description: post.desc || '',
       url: `${site.host}${site.postsDir}${post.id}`,
-      date: new Date(post.date).toUTCString(),
+      date: parseISO(post.date).toUTCString(),
       custom_elements,
     })
   })

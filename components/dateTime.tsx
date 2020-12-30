@@ -1,5 +1,6 @@
+import { parseISO } from 'date-fns'
 export default function DateTime({ dateString }: { dateString: string }) {
-  const date = new Date(dateString)
+  const date = parseISO(dateString)
   return (
     <time dateTime={dateString}>
       {date.toLocaleDateString('ja', {
