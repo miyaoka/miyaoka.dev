@@ -72,5 +72,9 @@
     a small {
       @apply text-xs text-gray-400 block overflow-ellipsis whitespace-nowrap overflow-hidden;
     }
+
+    code {
+      @apply bg-gray-100 px-2 text-sm rounded;
+    }
   }
 }
