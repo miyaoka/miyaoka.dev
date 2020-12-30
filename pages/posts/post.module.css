@@ -26,12 +26,6 @@
   iframe {
     @apply max-w-full;
   }
-  blockquote:not(.twitter-tweet) {
-    @apply border-gray-300 border-l-4 text-gray-500 p-1 pl-4 bg-gray-50;
-  }
-  blockquote.twitter-tweet {
-    @apply border border-gray-300 rounded-2xl bg-white p-4;
-  }
 
   figure {
     @apply flex flex-col items-center;
@@ -53,4 +47,8 @@
   code {
     @apply bg-gray-100 px-2 text-sm rounded;
   }
+}
+
+.article .twitter-tweet {
+  @apply border border-gray-300 rounded-2xl bg-white p-4;
 }
