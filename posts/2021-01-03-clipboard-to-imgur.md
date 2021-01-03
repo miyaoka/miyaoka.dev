@@ -3,6 +3,8 @@ title: VSCode拡張でクリップボード画像をImgurにアップロード�
 date: '2021-01-03'
 ---
 
+https://i.imgur.com/iAYpkt3.png
+
 GitHub の編集欄みたいに、markdown エディタに画像を貼り付けたらストレージにアップロードして、その URL を挿入するようにした。
 
 VSCode 拡張を作ったこと無かったので一から作ってみようと思ったが、検索したら既にそれっぽいのがあった。
@@ -10,13 +12,13 @@ VSCode 拡張を作ったこと無かったので一から作ってみようと�
 https://marketplace.visualstudio.com/items?itemName=MaxfieldWalker.vscode-imgur
 vscode-imgur
 
-ほぼほぼこれで良かったのだが、最終的な出力が `![Image](https://i.imgur.com/****.png)` という markdown 記法になっており、自分のブログでは URL のみの記法が望ましいのでちょっといじることにした。
+ほぼほぼこれで良かったのだが、最終的な出力が `![Image](https://i.imgur.com/****.png)` という markdown 記法になっており、自分のブログでは URL のみの記法が望ましいのでちょっと構造を調べていじることにした。
 
-## onPaste は無い
+## どうやっているのか？
 
-貼り付けということで、単純にペースト時のイベントから内容を取得できるのかと思っていたらそう簡単ではなかった。
+[VSCode 拡張の開発ドキュメント](https://code.visualstudio.com/api/get-started/your-first-extension) を手順通りやってみて、既存の拡張機能のコードを読んでみた。単純にペースト時のイベントから内容を取得できるのかと思っていたが案外そう簡単ではなかった。
 
-そもそも paste イベントが無く、また `vscode.env.clipboard` で clipboard にアクセスはできるのだがテキストの読み書きメソッドしかないので画像は取得できない。
+そもそもペーストを検知するイベントが無く、また `vscode.env.clipboard` で clipboard にアクセスはできるのだがテキストの読み書きメソッドしかないので画像は取得できない。
 
 先ほどのソースを調べたら `cmd+alt+v` をショートカットに登録し、そこからアクションを起こすようになっていることが分かった（なので普通のペーストのときには発動しない）。
 
