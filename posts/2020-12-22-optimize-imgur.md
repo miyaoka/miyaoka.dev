@@ -27,8 +27,41 @@ imgur は webp 画像も生成している。拡張子を webp にするだけ�
 
 ## つまり…？
 
-https://i.imgur.com/BfDUIDb.png
-こんな感じの記法でここまで生成する
+```md
+https://i.imgur.com/9QevyFC.jpg
+本わさび
+```
+
+↓
+
+```html
+<figure>
+  <a href="https://i.imgur.com/9QevyFC.jpg" target="_blank" rel="noopener">
+    <picture>
+      <source
+        type="image/webp"
+        sizes="(max-width: 320px) 320px, (max-width: 640px) 640px, 640px"
+        srcset="
+          https://i.imgur.com/9QevyFCh.webp 1024w,
+          https://i.imgur.com/9QevyFCl.webp  640w,
+          https://i.imgur.com/9QevyFCm.webp  320w
+        "
+      />
+      <img
+        src="https://i.imgur.com/9QevyFCl.jpg"
+        alt="本わさび"
+        title="本わさび"
+        loading="lazy"
+        style="min-height:480px"
+        onload="this.style.minHeight='auto'"
+      />
+    </picture>
+  </a>
+  <figcaption>本わさび</figcaption>
+</figure>
+```
+
+こんな感じの記法でここまで生成している
 
 ## パフォーマンス測定
 
