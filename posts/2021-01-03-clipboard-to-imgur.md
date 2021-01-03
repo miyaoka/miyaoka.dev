@@ -16,13 +16,19 @@ vscode-imgur
 
 貼り付けということで、単純にペースト時のイベントから内容を取得できるのかと思っていたらそう簡単ではなかった。
 
-先ほどのソースを調べたら `cmd+alt+v` をショートカットに登録し、そこからアクションを起こすようになっている（なので普通のペーストのときには発動しない）。
+そもそも paste イベントが無く、また `vscode.env.clipboard` で clipboard にアクセスはできるのだがテキストの読み書きメソッドしかないので画像は取得できない。
+
+先ほどのソースを調べたら `cmd+alt+v` をショートカットに登録し、そこからアクションを起こすようになっていることが分かった（なので普通のペーストのときには発動しない）。
 
 他の似たような拡張も調べてみたがみんな同じ形式だった。おそらくはみんな 4 年前に作られた [Paste Image](https://marketplace.visualstudio.com/items?itemName=mushan.vscode-paste-image) という拡張を元にして作っているっぽい。
 
+[Issue](https://github.com/microsoft/vscode/issues/30066) を見ても Open 状態なのでまだ paste イベントは無いようだ（ちゃんと読んでない）。
+
+また、コード的には [Paste Image from local pc](https://marketplace.visualstudio.com/items?itemName=sakamoto66.vscode-paste-image) というものが 4 ヶ月前で新しく、元コードのでかいコールバック部分を Promise に書き換えていたり、AppleScript の代わりに pngpaste を使うようにしていたので参考にさせてもらった。
+
 ## WSL 環境でうまくいかない
 
-ペースト時にクリップボードから画像を取得するのだが、これが [Windows, Mac, Linux 用にそれぞれ script 処理](https://github.com/mushanshitiancai/vscode-paste-image/tree/fb795320aedea24a03e5c7d43d1059e4080277b3/res) があった。
+ペースト時にクリップボードから画像を取得する部分については、 [Windows, Mac, Linux 用にそれぞれ script 処理](https://github.com/mushanshitiancai/vscode-paste-image/tree/fb795320aedea24a03e5c7d43d1059e4080277b3/res) があった。
 
 問題なのは WSL 環境で、Linux の xclip を使うのだが WSL だとそこがうまくいかない。これは分かる人がいたら教えてほしい。
 
