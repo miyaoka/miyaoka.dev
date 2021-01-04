@@ -1,5 +1,8 @@
-import { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { getThumbPath } from '../lib/imgur'
+
+const transformClasses = ['opacity-0', 'scale-50', 'rotate-90']
+const transformClassesStr = transformClasses.join(' ')
 
 export default function ThumbImg({
   image,
@@ -8,28 +11,32 @@ export default function ThumbImg({
   image: string
   title: string
 }) {
-  const thumbUrl = getThumbPath(image)
+  const src = getThumbPath(image)
+  const ref = React.createRef<HTMLImageElement>()
 
-  // imgがload済みだとonLoadによるtransformがresetされない
-  // 確実にonLoadを発生させるため、src初期値を空にする
-  const [src, setSrc] = useState('')
   useEffect(() => {
-    setSrc(thumbUrl)
+    const el = ref.current
+    if (!el) return
+
+    const resetTransform = () => {
+      el.classList.remove(...transformClasses)
+    }
+
+    // mount時にload完了している場合はonLoadが発火しないのでcompleteで発火させる
+    if (el.complete) {
+      resetTransform()
+      return
+    }
+    el.onload = resetTransform
   }, [])
 
   return (
     <img
       src={src}
-      className="thumb rounded-full transition-all duration-300 transform opacity-0 scale-50 rotate-90"
+      className={`rounded-full transition-all duration-300 transform ${transformClassesStr} `}
       loading="lazy"
       title={title}
-      onLoad={(ev) =>
-        (ev.target as HTMLImageElement).classList.remove(
-          'opacity-0',
-          'scale-50',
-          'rotate-90'
-        )
-      }
+      ref={ref}
     />
   )
 }

@@ -61,7 +61,7 @@ export default function Home({
                   <Link href={`/posts/${id}`}>
                     <a
                       title={title}
-                      className="block border box-content border-gray-400 bg-gray-100 rounded-full"
+                      className="w-full h-full block border box-content border-gray-400 bg-gray-100 rounded-full"
                     >
                       {ThumbImg({ image, title })}
                     </a>
