@@ -17,18 +17,7 @@ export async function getSortedPostsData() {
     fileNames.map(async (fileName) => {
       // Remove ".md" from file name to get id
       const id = fileName.replace(/\.md$/, '')
-
-      const { contentHtml, ...metaData } = await getContent(fileName)
-      // Combine the data with the id
-      return {
-        id,
-        ...(metaData as {
-          title: string
-          date: string
-          desc?: string
-          image?: string
-        }),
-      }
+      return await getPostData(id)
     })
   )
 
@@ -53,16 +42,18 @@ export function getAllPostIds() {
   })
 }
 
-export async function getPostData(id: string) {
-  return {
-    id,
-    ...(await getContent(`${id}.md`)),
-  }
+export type PostItem = {
+  id: string
+  title: string
+  date: string
+  contentHtml: string
+  desc?: string
+  image?: string
 }
 
-async function getContent(fileName: string) {
+export async function getPostData(id: string): Promise<PostItem> {
   // Read markdown file as string
-  const fullPath = path.join(postsDirectory, fileName)
+  const fullPath = path.join(postsDirectory, `${id}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
   // Use gray-matter to parse the post metadata section
   const matterResult = matter(fileContents)
@@ -87,8 +78,9 @@ async function getContent(fileName: string) {
 
   // Combine the data with the id and contentHtml
   return {
+    id,
     contentHtml,
     ...contentDesc,
     ...matterResult.data,
-  }
+  } as PostItem
 }
