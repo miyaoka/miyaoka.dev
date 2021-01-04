@@ -2,7 +2,7 @@
   h2,
   h3,
   h4 {
-    @apply font-bold mt-8 mb-4;
+    @apply font-bold mt-12 mb-4;
   }
   h2 {
     @apply text-2xl;
@@ -14,11 +14,11 @@
     @apply text-lg;
   }
   p {
-    @apply my-4 text-base;
+    @apply my-4;
   }
   ol,
   ul {
-    @apply list-disc my-4 pl-6 text-base;
+    @apply list-disc my-4 pl-6;
   }
   li {
     @apply my-1;
@@ -38,6 +38,9 @@
   }
   figure a {
     @apply hover:opacity-100;
+  }
+  img {
+    @apply mx-auto;
   }
 
   a {

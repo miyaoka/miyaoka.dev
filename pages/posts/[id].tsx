@@ -63,7 +63,7 @@ export default function Post({
         </small>
         <h1 className="text-3xl font-bold my-2">{title}</h1>
         <div
-          className="my-10"
+          className="my-16"
           dangerouslySetInnerHTML={{ __html: contentHtml }}
         />
       </article>
