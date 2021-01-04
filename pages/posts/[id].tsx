@@ -57,13 +57,13 @@ export default function Post({
           </>
         )}
       </Head>
-      <article className={`${styles.article} mt-4`}>
+      <article className={`${styles.article} mt-16 lg:text-lg`}>
         <small className="text-gray-500">
           <DateTime dateString={date} />
         </small>
         <h1 className="text-3xl font-bold my-2">{title}</h1>
         <div
-          className="my-16"
+          className="my-8"
           dangerouslySetInnerHTML={{ __html: contentHtml }}
         />
       </article>

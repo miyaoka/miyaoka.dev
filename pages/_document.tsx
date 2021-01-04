@@ -4,10 +4,7 @@ import { GA_TRACKING_ID } from '../lib/gtag'
 export default class MyDocument extends Document {
   render() {
     return (
-      <Html
-        lang="ja"
-        className="font-body text-base sm:text-lg text-gray-700 break-words"
-      >
+      <Html lang="ja" className="font-body text-base text-gray-800 break-words">
         <Head>
           {GA_TRACKING_ID != null && (
             <>
