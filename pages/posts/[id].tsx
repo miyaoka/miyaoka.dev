@@ -1,25 +1,21 @@
 import { useEffect } from 'react'
-import { GetStaticProps, GetStaticPaths } from 'next'
+import {
+  GetStaticProps,
+  GetStaticPaths,
+  InferGetStaticPropsType,
+  GetStaticPropsContext,
+} from 'next'
 import Head from 'next/head'
 import { Twitter } from 'react-feather'
 
 import Layout from '../../components/layout'
-import { getAllPostIds, getPostData } from '../../lib/posts'
+import { getAllPostIds, getPostData, PostItem } from '../../lib/posts'
 import DateTime from '../../components/dateTime'
 import styles from './post.module.css'
 
 export default function Post({
   postData,
-}: {
-  postData: {
-    id: string
-    title: string
-    date: string
-    contentHtml: string
-    desc?: string
-    image?: string
-  }
-}) {
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   const { id, title, date, contentHtml, desc, image } = postData
 
   useEffect(() => {
@@ -96,7 +92,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   }
 }
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
   const postData = await getPostData(params?.id as string)
   return {
     props: {

@@ -6,6 +6,7 @@ import Link from 'next/link'
 import DateTime from '../components/dateTime'
 import { getThumbPath } from '../lib/imgur'
 import site from '../site.config.json'
+import { InferGetStaticPropsType } from 'next'
 
 const linkList = [
   {
@@ -28,16 +29,8 @@ const linkList = [
 ]
 
 export default function Home({
-  allPostsData,
-}: {
-  allPostsData: {
-    date: string
-    title: string
-    id: string
-    desc?: string
-    image?: string
-  }[]
-}) {
+  allPostsMetaData,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <Layout home>
       <Head>
@@ -61,7 +54,7 @@ export default function Home({
       </div>
       <section className="mt-20">
         <ul className="grid gap-y-4">
-          {allPostsData.map(({ id, date, title, desc, image }) => (
+          {allPostsMetaData.map(({ id, date, title, desc, image }) => (
             <li key={id} className="flex items-center">
               <div className="thumb flex-shrink-0 mr-4">
                 {image && (
@@ -102,9 +95,16 @@ export default function Home({
 
 export async function getStaticProps() {
   const allPostsData = await getSortedPostsData()
+
+  // reduce state data
+  const allPostsMetaData = allPostsData.map((post) => {
+    const { contentHtml, ...metaData } = post
+    return metaData
+  })
+
   return {
     props: {
-      allPostsData,
+      allPostsMetaData,
     },
   }
 }
