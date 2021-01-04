@@ -42,7 +42,7 @@ export function getAllPostIds() {
   })
 }
 
-export type PostItem = {
+type PostItem = {
   id: string
   title: string
   date: string
@@ -51,7 +51,7 @@ export type PostItem = {
   image?: string
 }
 
-export async function getPostData(id: string): Promise<PostItem> {
+export async function getPostData(id: string) {
   // Read markdown file as string
   const fullPath = path.join(postsDirectory, `${id}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')

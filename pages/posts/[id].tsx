@@ -1,6 +1,5 @@
 import { useEffect } from 'react'
 import {
-  GetStaticProps,
   GetStaticPaths,
   InferGetStaticPropsType,
   GetStaticPropsContext,
@@ -9,7 +8,7 @@ import Head from 'next/head'
 import { Twitter } from 'react-feather'
 
 import Layout from '../../components/layout'
-import { getAllPostIds, getPostData, PostItem } from '../../lib/posts'
+import { getAllPostIds, getPostData } from '../../lib/posts'
 import DateTime from '../../components/dateTime'
 import styles from './post.module.css'
 
