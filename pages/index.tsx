@@ -74,16 +74,16 @@ export default function Home({
                 <small className="text-gray-500">
                   <DateTime dateString={date} />
                 </small>
-                <h2 className="text-lg font-bold">
-                  <Link href={`/posts/${id}`}>
-                    <a>{title}</a>
-                  </Link>
-                </h2>
-                {desc && (
-                  <div className="text-gray-500 text-sm leading-snug">
-                    {desc}
-                  </div>
-                )}
+                <Link href={`/posts/${id}`}>
+                  <a className="block">
+                    <h2 className="text-lg font-bold">{title}</h2>
+                    {desc && (
+                      <div className="text-gray-500 text-sm leading-snug">
+                        {desc}
+                      </div>
+                    )}
+                  </a>
+                </Link>
               </div>
             </li>
           ))}
