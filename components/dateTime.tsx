@@ -1,16 +1,9 @@
-import { parseISO } from 'date-fns'
+import { format } from 'date-fns'
+import { zonedTimeToUtc } from 'date-fns-tz'
 export default function DateTime({ dateString }: { dateString: string }) {
-  const date = parseISO(dateString)
-  return (
-    <time dateTime={dateString}>
-      {date.toLocaleDateString('ja', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-        // hour: '2-digit',
-        // minute: '2-digit',
-        timeZone: 'Asia/Tokyo',
-      })}
-    </time>
-  )
+  const date = zonedTimeToUtc(dateString, 'Asia/Tokyo')
+  const datetime = date.toISOString()
+  const dateLabel = format(date, 'yyyy年M月d日')
+
+  return <time dateTime={datetime}>{dateLabel}</time>
 }
