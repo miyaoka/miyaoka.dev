@@ -55,16 +55,26 @@ export default function Home({
       <section className="mt-20">
         <ul className="grid gap-y-4">
           {allPostsMetaData.map(({ id, date, title, desc, image }) => (
-            <li key={id} className="flex items-center">
-              <div className="thumb flex-shrink-0 mr-4">
+            <li key={id} className="flex">
+              <div className="thumb flex-shrink-0 mt-4 mr-5">
                 {image && (
                   <Link href={`/posts/${id}`}>
-                    <a title={title}>
+                    <a
+                      title={title}
+                      className="block border box-content border-gray-400 bg-gray-100 rounded-full"
+                    >
                       <img
                         src={getThumbPath(image)}
-                        className="border border-gray-400  rounded-full"
+                        className="thumb rounded-full transition-all duration-300 transform opacity-0 scale-50 rotate-90"
                         loading="lazy"
                         title={title}
+                        onLoad={(ev) =>
+                          (ev.target as HTMLImageElement).classList.remove(
+                            'opacity-0',
+                            'scale-50',
+                            'rotate-90'
+                          )
+                        }
                       />
                     </a>
                   </Link>
