@@ -4,9 +4,9 @@ import Layout from '../components/layout'
 import { getSortedPostsData } from '../lib/posts'
 import Link from 'next/link'
 import DateTime from '../components/dateTime'
-import { getThumbPath } from '../lib/imgur'
 import site from '../site.config.json'
 import { InferGetStaticPropsType } from 'next'
+import ThumbImg from '../components/thumbImg'
 
 const linkList = [
   {
@@ -55,17 +55,15 @@ export default function Home({
       <section className="mt-20">
         <ul className="grid gap-y-4">
           {allPostsMetaData.map(({ id, date, title, desc, image }) => (
-            <li key={id} className="flex items-center">
-              <div className="thumb flex-shrink-0 mr-4">
+            <li key={id} className="flex">
+              <div className="thumb flex-shrink-0 mt-4 mr-5">
                 {image && (
                   <Link href={`/posts/${id}`}>
-                    <a title={title}>
-                      <img
-                        src={getThumbPath(image)}
-                        className="border border-gray-400  rounded-full"
-                        loading="lazy"
-                        title={title}
-                      />
+                    <a
+                      title={title}
+                      className="block border box-content border-gray-400 bg-gray-100 rounded-full"
+                    >
+                      {ThumbImg({ image, title })}
                     </a>
                   </Link>
                 )}
