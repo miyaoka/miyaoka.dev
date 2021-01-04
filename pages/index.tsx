@@ -4,9 +4,9 @@ import Layout from '../components/layout'
 import { getSortedPostsData } from '../lib/posts'
 import Link from 'next/link'
 import DateTime from '../components/dateTime'
-import { getThumbPath } from '../lib/imgur'
 import site from '../site.config.json'
 import { InferGetStaticPropsType } from 'next'
+import ThumbImg from '../components/thumbImg'
 
 const linkList = [
   {
@@ -63,19 +63,7 @@ export default function Home({
                       title={title}
                       className="block border box-content border-gray-400 bg-gray-100 rounded-full"
                     >
-                      <img
-                        src={getThumbPath(image)}
-                        className="thumb rounded-full transition-all duration-300 transform opacity-0 scale-50 rotate-90"
-                        loading="lazy"
-                        title={title}
-                        onLoad={(ev) =>
-                          (ev.target as HTMLImageElement).classList.remove(
-                            'opacity-0',
-                            'scale-50',
-                            'rotate-90'
-                          )
-                        }
-                      />
+                      {ThumbImg({ image, title })}
                     </a>
                   </Link>
                 )}
