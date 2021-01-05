@@ -33,7 +33,7 @@ export default function Layout({
         <meta property="og:description" key="og:description" content={desc} />
         <meta property="og:title" key="og:title" content={title} />
       </Head>
-      <header className="flex sticky top-0 bg-white py-4">
+      <header className="flex sticky top-0 bg-white py-4 z-10">
         {home ? <h1>{siteTitleElement}</h1> : siteTitleElement}
       </header>
       <main>{children}</main>
