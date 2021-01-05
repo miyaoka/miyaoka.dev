@@ -1,8 +1,5 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { getThumbPath } from '../lib/imgur'
-
-const transformClasses = ['opacity-0', 'scale-50', 'rotate-90']
-const transformClassesStr = transformClasses.join(' ')
 
 export default function ThumbImg({
   image,
@@ -14,13 +11,13 @@ export default function ThumbImg({
   const src = getThumbPath(image)
   const ref = React.createRef<HTMLImageElement>()
 
+  // initial Transform
+  const [classNames, setClassNames] = useState('opacity-0 scale-50 rotate-90')
+  const resetTransform = () => setClassNames('')
+
   useEffect(() => {
     const el = ref.current
     if (!el) return
-
-    const resetTransform = () => {
-      el.classList.remove(...transformClasses)
-    }
 
     // mount時にload完了している場合はonLoadが発火しないのでcompleteで発火させる
     if (el.complete) {
@@ -33,7 +30,7 @@ export default function ThumbImg({
   return (
     <img
       src={src}
-      className={`rounded-full transition-all duration-300 transform ${transformClassesStr} `}
+      className={`rounded-full transform transition-all duration-300 ${classNames}`}
       loading="lazy"
       title={title}
       ref={ref}
