@@ -12,7 +12,7 @@ export default function ThumbImg({
   const ref = React.createRef<HTMLImageElement>()
 
   // initial Transform
-  const [classNames, setClassNames] = useState('opacity-0 scale-50 rotate-90')
+  const [classNames, setClassNames] = useState('opacity-0 scale-0 rotate-90')
   const resetTransform = () => setClassNames('')
 
   useEffect(() => {
@@ -21,7 +21,7 @@ export default function ThumbImg({
 
     // mount時にload完了している場合はonLoadが発火しないのでcompleteで発火させる
     if (el.complete) {
-      resetTransform()
+      requestAnimationFrame(resetTransform)
       return
     }
     el.onload = resetTransform
@@ -30,7 +30,7 @@ export default function ThumbImg({
   return (
     <img
       src={src}
-      className={`rounded-full transform transition-all duration-300 ${classNames}`}
+      className={`rounded-full transform transition-all duration-200 delay-75 ${classNames}`}
       loading="lazy"
       title={title}
       ref={ref}
