@@ -11,26 +11,22 @@ export default function ThumbImg({
   const src = getThumbPath(image)
   const ref = React.createRef<HTMLImageElement>()
 
-  // initial Transform
-  const [classNames, setClassNames] = useState('opacity-0 scale-50 rotate-90')
-  const resetTransform = () => setClassNames('')
+  const [transitionNames, setTransitionNames] = useState('')
 
   useEffect(() => {
     const el = ref.current
-    if (!el) return
+    if (!el || el.complete) return
 
-    // mount時にload完了している場合はonLoadが発火しないのでcompleteで発火させる
-    if (el.complete) {
-      resetTransform()
-      return
-    }
-    el.onload = resetTransform
+    // mount時にcompleteしていなければtransitionをつける
+    setTransitionNames('opacity-0 scale-50 rotate-90')
+    // onloadで解除してアニメーション
+    el.onload = () => setTransitionNames('')
   }, [])
 
   return (
     <img
       src={src}
-      className={`rounded-full transform transition-all duration-300 ${classNames}`}
+      className={`rounded-full transform transition-all duration-300 ${transitionNames}`}
       loading="lazy"
       title={title}
       ref={ref}
