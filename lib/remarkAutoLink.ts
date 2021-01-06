@@ -44,8 +44,8 @@ function ontext<V extends Node>(node: V, parents: Node[]) {
     const link = {
       type: 'html',
       position: node.position,
-      value: `<a href="${linkPath}" target="_blank" rel="noopener">
-      ${caption ?? linkPath}
+      value: `<a href="${linkPath}" class="inline-block border-l-4 border-green-400 px-3" target="_blank" rel="noopener">
+      ${`🔗 ${caption ?? linkPath}`}
       ${caption ? `<small>${new URL(linkPath).hostname}</small>` : ''}
       </a>`,
     }
