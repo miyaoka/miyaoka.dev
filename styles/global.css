@@ -37,4 +37,7 @@ article {
   .twitter-tweet {
     @apply mx-auto;
   }
+  a.autoLink {
+    @apply inline-block border-l-4 border-green-500 px-3 ml-2;
+  }
 }
