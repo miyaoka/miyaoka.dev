@@ -1,12 +1,12 @@
-import Head from 'next/head'
-import { Twitter, GitHub, Rss } from 'react-feather'
-import Layout from '../components/layout'
-import { getSortedPostsData } from '../lib/posts'
-import Link from 'next/link'
-import DateTime from '../components/dateTime'
-import site from '../site.config.json'
 import { InferGetStaticPropsType } from 'next'
+import Head from 'next/head'
+import Link from 'next/link'
+import { Twitter, GitHub, Rss } from 'react-feather'
+import { getSortedPostsData } from '../lib/posts'
+import Layout from '../components/layout'
+import DateTime from '../components/dateTime'
 import ThumbImg from '../components/thumbImg'
+import site from '../site.config.json'
 
 const linkList = [
   {
@@ -14,16 +14,14 @@ const linkList = [
     url: 'https://twitter.com/miyaoka',
     comp: Twitter,
   },
-
   {
     title: 'GitHub',
     url: 'https://github.com/miyaoka/miyaoka.dev',
     comp: GitHub,
   },
-
   {
     title: 'RSS',
-    url: `/${site.feedPath}`,
+    url: site.feedPath,
     comp: Rss,
   },
 ]

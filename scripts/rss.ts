@@ -12,8 +12,8 @@ async function generate() {
     title: site.title,
     description: site.desc,
     feed_url: `${site.host}${site.feedPath}`,
-    site_url: site.host,
-    image_url: `${site.host}ogp.png`,
+    site_url: `${site.host}/`,
+    image_url: `${site.host}/ogp.png`,
     language: 'ja',
     custom_namespaces: {
       media: 'http://search.yahoo.com/mrss/',
@@ -30,14 +30,14 @@ async function generate() {
     feed.item({
       title: post.title,
       description: post.desc || '',
-      url: `${site.host}${site.postsDir}${post.id}`,
+      url: `${site.host}${site.postsDir}/${post.id}`,
       date: parseISO(post.date).toUTCString(),
       custom_elements,
     })
   })
 
   const rss = feed.xml({ indent: true })
-  fs.writeFileSync(`./public/${site.feedPath}`, rss)
+  fs.writeFileSync(`./public${site.feedPath}`, rss)
 }
 
 generate()
