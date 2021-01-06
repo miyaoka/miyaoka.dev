@@ -10,7 +10,7 @@ https://i.imgur.com/QMHKw1q.png
 https://zenn.dev/steelydylan/articles/zenn-web-components
 Web Components を利用した Zenn マークダウン部分の改善について
 
-https://github.com/zenn-dev/zenn-editor/tree/master/packages/zenn-embed-elements
+https://github.com/zenn-dev/zenn-editor/tree/10fef04c83fb238b8fcdf7260acc8725666bf258/packages/zenn-embed-elements
 ZennEditor 内のコード
 
 ## 比較
