@@ -31,7 +31,7 @@ article {
     @apply border border-l border-gray-300 rounded-2xl bg-white p-4;
   }
   .embedTweet:not(.embedTweetLoaded) {
-    @apply flex flex-col justify-center items-center;
+    @apply flex flex-col justify-center items-center break-all;
   }
   iframe,
   .twitter-tweet {
