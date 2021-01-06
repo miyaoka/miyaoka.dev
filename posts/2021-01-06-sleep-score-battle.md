@@ -44,7 +44,7 @@ https://i.imgur.com/UPgKDfs.png
 
 何か要因があるのかと振り返ってみたが、そういえば養命酒（これもツイッターで流行ってたので初めて買ってみた）を飲み始めたのが効いてるのかもしれない。1 日 3 回、食前・就寝前に飲むことが推奨されている。
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">買った <a href="https://t.co/uYELVM1s4g">pic.twitter.com/uYELVM1s4g</a></p>&mdash; miyaoka / STUDIO (@miyaoka) <a href="https://twitter.com/miyaoka/status/1329031987923881986?ref_src=twsrc%5Etfw">November 18, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+https://twitter.com/miyaoka/status/1329031987923881986
 
 ## 体重計
 

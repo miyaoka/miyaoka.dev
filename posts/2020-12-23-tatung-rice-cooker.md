@@ -65,6 +65,6 @@ https://note.com/momonabemimi/n/n1b3f2e4b6370
 
 あとは電鍋用のせいろが欲しくなってる。来年には日本のショップでも公式販売するみたいなのでたぶん買うと思う。
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">おかげさまで、本日も１００台以上出荷した。ご時世なので会社勤務組の少ない人数で全力対応、良いチームワークでした。☺<a href="https://twitter.com/TanakaRei_vd?ref_src=twsrc%5Etfw">@TanakaRei_vd</a> さん<a href="https://twitter.com/warashibe?ref_src=twsrc%5Etfw">@warashibe</a> さん<br>すごい発信力~~<br>しばらく社長も参戦し続けそう☺ <a href="https://t.co/8XaFGtYXNE">pic.twitter.com/8XaFGtYXNE</a></p>&mdash; 大同電鍋公式アカウント (@daidodennabe) <a href="https://twitter.com/daidodennabe/status/1335904281065484288?ref_src=twsrc%5Etfw">December 7, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+https://twitter.com/daidodennabe/status/1335904281065484288
 
 ちなみに最初の記事の反響で電鍋は注文がめっちゃきてるらしい。いい話だ。

@@ -5,7 +5,7 @@ date: '2020-12-30 10:00'
 
 シャニマスの[アルストロメリア](https://shinycolors.idolmaster.jp/idol/alstroemeria/)というユニットの『アルストロメリア』という曲で「幸福論誕生」と歌われている。
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">駅前でアルストロメリアの大崎姉妹が路上ライブをしていました。<br>めちゃくちゃ可愛かったです。<a href="https://t.co/UUDkEYb5vS">https://t.co/UUDkEYb5vS</a><br><br>--------------------------------<br>絵：さえき(@3eak1x)<a href="https://twitter.com/hashtag/%E5%A4%A7%E5%B4%8E%E5%A7%89%E5%A6%B9%E7%94%9F%E8%AA%95%E7%A5%AD2020?src=hash&amp;ref_src=twsrc%5Etfw">#大崎姉妹生誕祭2020</a> <a href="https://t.co/fWhjmfLfux">pic.twitter.com/fWhjmfLfux</a></p>&mdash; 斎藤2 (@VoGtDrBaKey) <a href="https://twitter.com/VoGtDrBaKey/status/1342122877223505921?ref_src=twsrc%5Etfw">December 24, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+https://twitter.com/VoGtDrBaKey/status/1342122877223505921
 
 正直シャニマスやアイドルというものに対して自分はまだ理解が足りていない。シャニマスはアイドルをプロデュースするという裏方の視点であり、特に表舞台としてのアイドル活動は間接的にしか描かれていない（前作は 3D のライブシーンがあるがシャニマスには無い）。
 
@@ -56,7 +56,7 @@ https://i.imgur.com/0Dqa29r.png
 
 シャニマス世界の人々は誕生日を迎えても歳を取らないが、シナリオは続いており展開が気になる。
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">1月1日より、ノクチルの皆さんの物語を描いたシナリオイベント「海へ出るつもりじゃなかったし」が始まりますよ～。<br>イベントの予告動画をご覧ください♪<a href="https://twitter.com/hashtag/%E3%82%B7%E3%83%A3%E3%83%8B%E3%83%9E%E3%82%B9?src=hash&amp;ref_src=twsrc%5Etfw">#シャニマス</a> <a href="https://twitter.com/hashtag/idolmaster?src=hash&amp;ref_src=twsrc%5Etfw">#idolmaster</a> <a href="https://t.co/CBU9Zt2bbW">pic.twitter.com/CBU9Zt2bbW</a></p>&mdash; アイドルマスター シャイニーカラーズ公式 (@imassc_official) <a href="https://twitter.com/imassc_official/status/1343799408652034048?ref_src=twsrc%5Etfw">December 29, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+https://twitter.com/imassc_official/status/1343799408652034048
 
 正月に始まるノクチルイベントも相変わらずロックそうだ。
 

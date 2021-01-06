@@ -5,7 +5,7 @@ date: '2020-12-30'
 
 今年の衝撃はちいかわであり、今年を代表する名言として「心がふたつある〜〜」（ドスドスドスドス）は記憶にとどめておきたい。
 
-<blockquote class="twitter-tweet"><p lang="und" dir="ltr">✋ <a href="https://t.co/q7lfJRCrVg">pic.twitter.com/q7lfJRCrVg</a></p>&mdash; ちいかわ (@ngnchiikawa) <a href="https://twitter.com/ngnchiikawa/status/1302963721396867072?ref_src=twsrc%5Etfw">September 7, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+https://twitter.com/ngnchiikawa/status/1302963721396867072
 
 「呪われちゃったのかな？」
 
@@ -25,25 +25,25 @@ date: '2020-12-30'
 
 https://i.imgur.com/TC8EMXA.png
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">仙水忍「心が七つあるー」</p>&mdash; ピエール手塚🍙 (@oskdgkmgkkk) <a href="https://twitter.com/oskdgkmgkkk/status/1343890408871395328?ref_src=twsrc%5Etfw">December 29, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+https://twitter.com/oskdgkmgkkk/status/1343890408871395328
 
 ちなみに仙水忍は 7 つあるし、ビリー・ミリガンは 24 個ある。
 
 ## 一連のツイート
 
-<blockquote class="twitter-tweet"><p lang="und" dir="ltr">🕺 <a href="https://t.co/fIgQeQ3KFE">pic.twitter.com/fIgQeQ3KFE</a></p>&mdash; ちいかわ (@ngnchiikawa) <a href="https://twitter.com/ngnchiikawa/status/1301174831753211904?ref_src=twsrc%5Etfw">September 2, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+https://twitter.com/ngnchiikawa/status/1301174831753211904
 
-<blockquote class="twitter-tweet"><p lang="und" dir="ltr">📷 <a href="https://t.co/qa2eiMAQBY">pic.twitter.com/qa2eiMAQBY</a></p>&mdash; ちいかわ (@ngnchiikawa) <a href="https://twitter.com/ngnchiikawa/status/1301570949095911424?ref_src=twsrc%5Etfw">September 3, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+https://twitter.com/ngnchiikawa/status/1301570949095911424
 
-<blockquote class="twitter-tweet"><p lang="und" dir="ltr">🌷 <a href="https://t.co/wM3heIMLoc">pic.twitter.com/wM3heIMLoc</a></p>&mdash; ちいかわ (@ngnchiikawa) <a href="https://twitter.com/ngnchiikawa/status/1301834956772003840?ref_src=twsrc%5Etfw">September 4, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+https://twitter.com/ngnchiikawa/status/1301834956772003840
 
-<blockquote class="twitter-tweet"><p lang="und" dir="ltr">🌰 <a href="https://t.co/yD9MMYcPBc">pic.twitter.com/yD9MMYcPBc</a></p>&mdash; ちいかわ (@ngnchiikawa) <a href="https://twitter.com/ngnchiikawa/status/1302210937236013059?ref_src=twsrc%5Etfw">September 5, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+https://twitter.com/ngnchiikawa/status/1302210937236013059
 
-<blockquote class="twitter-tweet"><p lang="und" dir="ltr">✋ <a href="https://t.co/q7lfJRCrVg">pic.twitter.com/q7lfJRCrVg</a></p>&mdash; ちいかわ (@ngnchiikawa) <a href="https://twitter.com/ngnchiikawa/status/1302963721396867072?ref_src=twsrc%5Etfw">September 7, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+https://twitter.com/ngnchiikawa/status/1302963721396867072
 
-<blockquote class="twitter-tweet"><p lang="und" dir="ltr">📷 <a href="https://t.co/sYwRM02TZI">pic.twitter.com/sYwRM02TZI</a></p>&mdash; ちいかわ (@ngnchiikawa) <a href="https://twitter.com/ngnchiikawa/status/1303341127454453760?ref_src=twsrc%5Etfw">September 8, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+https://twitter.com/ngnchiikawa/status/1303341127454453760
 
-<blockquote class="twitter-tweet"><p lang="und" dir="ltr">🍜 <a href="https://t.co/0Zml0uyhTD">pic.twitter.com/0Zml0uyhTD</a></p>&mdash; ちいかわ (@ngnchiikawa) <a href="https://twitter.com/ngnchiikawa/status/1304044546594992129?ref_src=twsrc%5Etfw">September 10, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+https://twitter.com/ngnchiikawa/status/1304044546594992129
 
 うさぎが入手したドクロの杖によりハチワレちゃんの願望であったカメラが現出するも、それは撮ったものが消えるカメラだった。
 
