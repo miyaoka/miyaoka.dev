@@ -28,7 +28,7 @@ https://i.imgur.com/loQzio5.png
 
 マニュアルには、「初めての方はプロテクターをつけて必ず経験者に補助してもらって乗ってください」と言ったことが書いてあり、なかなかびびる。実際乗り始めはめちゃくちゃ難しく感じられた。が、10 分ほどですぐ慣れた。
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">中年男性、セグウェイドリフト、動画 <a href="https://t.co/BYBZHyOXZc">pic.twitter.com/BYBZHyOXZc</a></p>&mdash; miyaoka / STUDIO (@miyaoka) <a href="https://twitter.com/miyaoka/status/1307529748692647936?ref_src=twsrc%5Etfw">September 20, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+https://twitter.com/miyaoka/status/1307529748692647936
 
 室内は滑りが良く、壁に手もつけるので乗りやすい。階下への騒音や床へのダメージを気にしなければ……。
 
@@ -40,7 +40,7 @@ https://i.imgur.com/loQzio5.png
 
 自転車やスケボーが走れても、セグウェイ ドリフトは両輪セパレートな小径の一輪車であるためとても段差に弱い。基本的に室内のスケート場などで楽しむべきものなのだろうという感じがする。
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">セグウェイ運転免許教習センター <a href="https://t.co/pXO4cgKNIA">pic.twitter.com/pXO4cgKNIA</a></p>&mdash; miyaoka / STUDIO (@miyaoka) <a href="https://twitter.com/miyaoka/status/1307935630983180288?ref_src=twsrc%5Etfw">September 21, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+https://twitter.com/miyaoka/status/1307935630983180288
 
 なんとか走れそうなスポットを見つけてスラローム走行の練習をした。
 
@@ -48,7 +48,7 @@ https://i.imgur.com/loQzio5.png
 
 ## 未来
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">セグウェイドリフト朝練 <a href="https://t.co/LP70oy1lez">pic.twitter.com/LP70oy1lez</a></p>&mdash; miyaoka / STUDIO (@miyaoka) <a href="https://twitter.com/miyaoka/status/1318672756217556992?ref_src=twsrc%5Etfw">October 20, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+https://twitter.com/miyaoka/status/1318672756217556992
 
 外で思い切り乗りたいが、どうしても人目が気になってしまう。なので早朝にやってみることにした。
 

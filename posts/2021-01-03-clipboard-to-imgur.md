@@ -66,7 +66,7 @@ App を登録すると clientId と clientSecret が取得できる。これを 
 
 あとは[以前書いたように](/posts/2020-12-22-optimize-imgur) imgur は各種サムネイルと webp 画像を生成してくれるので、markdown のパースをするところで最適化した画像を srcset に設定している。
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">クリップボード画像貼り付け→imgurアップロード→webp化 <a href="https://t.co/8hUQ4ynTAa">pic.twitter.com/8hUQ4ynTAa</a></p>&mdash; miyaoka / STUDIO (@miyaoka) <a href="https://twitter.com/miyaoka/status/1345691502769389568?ref_src=twsrc%5Etfw">January 3, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+https://twitter.com/miyaoka/status/1345691502769389568
 
 まとめると、こんな感じの運用になってる。
 
