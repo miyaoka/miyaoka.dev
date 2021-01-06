@@ -30,6 +30,9 @@ article {
   blockquote.twitter-tweet {
     @apply border border-l border-gray-300 rounded-2xl bg-white p-4;
   }
+  .embedTweet:not(.embedTweetLoaded) {
+    @apply flex flex-col justify-center items-center;
+  }
   iframe,
   .twitter-tweet {
     @apply mx-auto;
