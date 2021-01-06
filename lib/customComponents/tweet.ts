@@ -14,7 +14,7 @@ export class EmbedTweet extends HTMLElement {
     this.embedTweet(tweetId)
   }
   render(src: string) {
-    this.innerHTML = `<a href="${src}" target="_blank" rel="noopener">${src}</a>`
+    this.innerHTML = `<p><a href="${src}" target="_blank" rel="noopener">${src}</a></p>`
   }
   async embedTweet(tweetId: string) {
     const win = window as any
