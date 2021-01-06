@@ -1,5 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { GA_TRACKING_ID } from '../lib/gtag'
+import { host, feedPath } from '../site.config.json'
 
 export default class MyDocument extends Document {
   render() {
@@ -45,6 +46,11 @@ export default class MyDocument extends Document {
             href="/favicon-16x16.png"
           />
           <link rel="manifest" href="/site.webmanifest" />
+          <link
+            rel="alternate"
+            type="application/rss+xml"
+            href={`${host}${feedPath}`}
+          />
         </Head>
         <body className="pt-10 pb-20">
           <Main />
