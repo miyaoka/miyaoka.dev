@@ -17,20 +17,6 @@ export default function Post({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const { id, title, date, contentHtml, desc, image } = postData
 
-  useEffect(() => {
-    // @ts-ignore
-    if (typeof twttr !== 'undefined') {
-      // @ts-ignore
-      twttr.widgets.load()
-    } else {
-      const s = document.createElement('script')
-      s.setAttribute('src', 'https://platform.twitter.com/widgets.js')
-      s.setAttribute('async', 'true')
-      s.setAttribute('charset', 'utf-8')
-      document.head.appendChild(s)
-    }
-  }, [])
-
   return (
     <Layout>
       <Head>
