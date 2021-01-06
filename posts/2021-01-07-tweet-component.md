@@ -25,8 +25,8 @@ https://twitter.com/miyaoka/status/1346853138259611648?s=20
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">ほぼだいたい完全に理解した</p>&mdash; miyaoka / STUDIO (@miyaoka) <a href="https://twitter.com/miyaoka/status/1346720500387438593?ref_src=twsrc%5Etfw">January 6, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 ```
 
-- Zenn の記事にあるように `twttr.widget.load()` を走らせるのはページ内の全要素が対象になるためパフォーマンスの問題が少しある。
 - SPA サイトではページ遷移などで再レンダリングされると 埋め込みコードの script タグが実行されないので アプリ側で `twttr.widgets.load()` を叩く必要がある。
+- Zenn の記事にあるように `twttr.widget.load()` を走らせるのはページ内の全要素が対象になるためパフォーマンスの問題が少しある。
 - この間対応した [markdown 編集時の自動再読み込み](/posts/2020-12-31-hmr-on-markdown) を行うとロードされないのが気になっていた
 - 埋め込みコードを取得するのがだるい。（ツイートの右メニューから `Embed Tweet` を選んで別ページに遷移し、アニメーションが入ったあとでやっとコピーできる）
 
@@ -44,3 +44,16 @@ https://twitter.com/miyaoka/status/1346720500387438593
 
 - 埋め込みコードは blockquote でテキスト内容が入っているのでロードされなくても情報があるが、URL だけだと情報が皆無
 - ツイ消しされるとなんのツイートだったか分からなくなって困ってしまう（VSCode 拡張作って URL 貼付け時に内容取得しに行くべきか？）
+
+## Custom Elements ⊂ Web Components
+
+Web Components って書いてたけど、Custom Elements って言ったほうが正しいかもしれない。昨日初めて触ったからまだ良くわかってない。
+
+https://twitter.com/miyaoka/status/1346663025621680128?s=20
+
+https://twitter.com/yamanoku/status/1346663437389103105?s=20
+
+https://twitter.com/miyaoka/status/1346664808402206721?s=20
+
+https://www.webcomponents.org/introduction
+Introduction - webcomponents.org
