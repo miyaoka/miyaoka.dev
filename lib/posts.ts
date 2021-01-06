@@ -5,6 +5,7 @@ import remark from 'remark'
 import html from 'remark-html'
 import { images } from './remarkFigure'
 import { links } from './remarkAutoLink'
+import { tweet } from './remarkTweet'
 import externalLinks from 'remark-external-links'
 
 import { postsDir } from '../site.config.json'
@@ -60,6 +61,7 @@ export async function getPostData(id: string) {
   // Use remark to convert markdown into HTML string
   const processedContent = await remark()
     .use(images)
+    .use(tweet)
     .use(links)
     .use(externalLinks, { target: '_blank', rel: ['noopener'] })
     .use(html)
