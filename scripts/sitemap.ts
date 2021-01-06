@@ -10,7 +10,7 @@ const BUILD_ID = fs.readFileSync(path.join(nextDir, '/BUILD_ID')).toString()
 
 sitemap({
   baseUrl: site.host,
-  pagesDirectory: path.join(nextDir, '/server/pages'),
+  pagesDirectory: path.join(nextDir, '/serverless/pages'),
   targetDirectory: './public',
   ignoredExtensions: ['js', 'map'],
   extraPaths: ['/'],
