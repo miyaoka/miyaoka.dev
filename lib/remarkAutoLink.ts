@@ -45,8 +45,8 @@ function ontext<V extends Node>(node: V, parents: Node[]) {
       type: 'html',
       position: node.position,
       value: `<a href="${linkPath}" class="autoLink" target="_blank" rel="noopener">
-      ${`🔗 ${caption ?? linkPath}`}
-      ${caption ? `<small>${new URL(linkPath).hostname}</small>` : ''}
+      ${caption ? caption : `<span>🔗 ${linkPath}</span>`}
+      ${caption ? `<small>🔗 ${new URL(linkPath).hostname}</small>` : ''}
       </a>`,
     }
 
