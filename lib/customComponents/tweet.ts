@@ -20,7 +20,7 @@ export class EmbedTweet extends HTMLElement {
           this.embedTweet(tweetId)
         })
       },
-      { rootMargin: '100%' }
+      { rootMargin: '200%' }
     )
     observer.observe(this)
   }
