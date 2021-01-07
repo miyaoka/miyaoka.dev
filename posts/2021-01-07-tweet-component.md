@@ -69,9 +69,11 @@ Introduction - webcomponents.org
 
 ## 追記： lazyload 対応
 
-パフォーマンスを計測してみたらやはりいくつもツイートを埋め込んでいると全部いっぺんにロードが走るので重い。
+パフォーマンスを計測してみたらやはりいくつもツイートを埋め込んでいると全部いっぺんにロードが走るので重い。Custom Element にして読み込み処理は少しスマートになったが、ツイート自体のアセットが重いので、そもそも必要になるまで読み込まないようにしたい。
 
-`twtter.widget.createTweet` 後に iframe が挿入されるのでそこに `loading="lazy"` を付加すればいいかと思ってやってみたが、挿入された時点で読み込みが走ってしまう。なのでこの要素自体に IntersectionObserver で lazyload 処理を入れるようにした。
+`twtter.widget.createTweet` 後に iframe が挿入されるのでそこに `loading="lazy"` を付加すればいいかと思ってやってみたが（img と iframe は Native lazyload 可）、挿入された時点で既に読み込みは開始されている。
+
+なので Custom Element 自体に IntersectionObserver で lazyload 処理を入れ、必要になるまで createTweet しないようにした。
 
 https://github.com/miyaoka/miyaoka.dev/pull/13
 
