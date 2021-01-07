@@ -42,7 +42,7 @@ https://twitter.com/miyaoka/status/1346720500387438593?s=20
 <embed-tweet src="https://twitter.com/miyaoka/status/1346720500387438593" />
 ```
 
-→ Custom Element の`connectedCallback` イベントで最初は URL だけ表示し、twitter widget を load し終わったら URL は消す
+→ Custom Element の`connectedCallback` イベントで最初は URL だけ表示し、createTweet し終わったら URL は消す
 
 - Tweet の URL だけ貼れば表示できる
 - 各コンポーネントが自身の要素だけ load 実行する
