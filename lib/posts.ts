@@ -1,6 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
+import yaml from 'js-yaml'
 import remark from 'remark'
 import html from 'remark-html'
 import { images } from './remarkFigure'
@@ -57,7 +58,14 @@ export async function getPostData(id: string) {
   const fullPath = path.join(postsDirectory, `${id}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
   // Use gray-matter to parse the post metadata section
-  const matterResult = matter(fileContents)
+  const matterResult = matter(fileContents, {
+    engines: {
+      // Disable date parsing
+      // https://github.com/jonschlinkert/gray-matter/issues/62
+      // @ts-ignore
+      yaml: (str) => yaml.safeLoad(str, { schema: yaml.JSON_SCHEMA }),
+    },
+  })
   // Use remark to convert markdown into HTML string
   const processedContent = await remark()
     .use(images)
@@ -77,12 +85,14 @@ export async function getPostData(id: string) {
   if (firstImg) {
     contentDesc.image = firstImg[1]
   }
-
+  const { title, date } = matterResult.data
+  console.log(typeof date)
   // Combine the data with the id and contentHtml
   return {
     id,
     contentHtml,
     ...contentDesc,
-    ...matterResult.data,
+    title,
+    date,
   } as PostItem
 }

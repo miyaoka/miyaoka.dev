@@ -32,6 +32,7 @@
   },
   "devDependencies": {
     "@types/is-url": "^1.2.28",
+    "@types/js-yaml": "^4.0.0",
     "@types/node": "^14.14.14",
     "@types/react": "^17.0.0",
     "@types/rss": "^0.0.28",
