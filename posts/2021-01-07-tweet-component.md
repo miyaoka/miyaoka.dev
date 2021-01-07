@@ -52,7 +52,7 @@ https://twitter.com/miyaoka/status/1346720500387438593?s=20
 
 - 埋め込みコードは blockquote でテキスト内容が入っているのでロードされなくても情報があるが、URL だけだと情報が皆無
 - ツイ消しされるとなんのツイートだったか分からなくなって困ってしまう（VSCode 拡張作って URL 貼付け時に内容取得しに行くべきか？）
-- 埋め込みコードのオプションで `Hide Conversation` などが指定できない
+- 埋め込みコードのオプションで `Hide Conversation` などが指定できない（指定できる記法を作るかも）
 
 ## Custom Elements ⊂ Web Components
 
@@ -67,10 +67,16 @@ https://twitter.com/miyaoka/status/1346664808402206721?s=20
 https://www.webcomponents.org/introduction
 Introduction - webcomponents.org
 
-## 追記：lazyload 対応
-
-https://github.com/miyaoka/miyaoka.dev/pull/13
+## 追記： lazyload 対応
 
 パフォーマンスを計測してみたらやはりいくつもツイートを埋め込んでいると全部いっぺんにロードが走るので重い。
 
-`twtter.widget.createTweet` 後に iframe が挿入されるのでそこに `loading="lazy"` を付加すればいいかと思ったが、挿入された時点で読み込みが走ってしまう。なのでこの要素自体に IntersectionObserver で lazyload 処理を入れるようにした。
+`twtter.widget.createTweet` 後に iframe が挿入されるのでそこに `loading="lazy"` を付加すればいいかと思ってやってみたが、挿入された時点で読み込みが走ってしまう。なのでこの要素自体に IntersectionObserver で lazyload 処理を入れるようにした。
+
+https://github.com/miyaoka/miyaoka.dev/pull/13
+
+https://i.imgur.com/y1Lk3e9.png
+mobile の before / after
+
+https://i.imgur.com/ZPAnBwG.png
+PC の before / after
