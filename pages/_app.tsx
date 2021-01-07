@@ -10,6 +10,14 @@ if (gtag.GA_TRACKING_ID != null) {
 
 export default function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
+    // for IE
+    if (!('IntersectionObserver' in window)) {
+      // @ts-ignore
+      window.IntersectionObserver = () => {
+        observe: () => {}
+      }
+    }
+
     import('../lib/customComponents/index')
   }, [])
   return <Component {...pageProps} />
