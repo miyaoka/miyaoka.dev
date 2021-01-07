@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "new": "date +%Y-%m-%d-.md | xargs code",
     "dev": "next dev",
     "build:rss": "cross-env TS_NODE_COMPILER_OPTIONS={\\\"module\\\":\\\"commonjs\\\"} ts-node ./scripts/rss.ts",
     "build:sitemap": "cross-env TS_NODE_COMPILER_OPTIONS={\\\"module\\\":\\\"commonjs\\\"} ts-node ./scripts/sitemap.ts",
