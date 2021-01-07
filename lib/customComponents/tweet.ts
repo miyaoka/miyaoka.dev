@@ -10,10 +10,21 @@ export class EmbedTweet extends HTMLElement {
     if (!matched) return
     const [_, tweetId] = matched
 
-    this.render(src)
-    this.embedTweet(tweetId)
+    this.renderPlaceholder(src)
+
+    const observer = new IntersectionObserver(
+      (entryList) => {
+        entryList.forEach((entry) => {
+          if (!entry.isIntersecting) return
+          observer.unobserve(this)
+          this.embedTweet(tweetId)
+        })
+      },
+      { rootMargin: '100%' }
+    )
+    observer.observe(this)
   }
-  render(src: string) {
+  renderPlaceholder(src: string) {
     this.innerHTML = `<p><a href="${src}" target="_blank" rel="noopener">${src}</a></p>`
   }
   async embedTweet(tweetId: string) {
