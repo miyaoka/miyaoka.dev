@@ -66,3 +66,11 @@ https://twitter.com/miyaoka/status/1346664808402206721?s=20
 
 https://www.webcomponents.org/introduction
 Introduction - webcomponents.org
+
+## 追記：lazyload 対応
+
+https://github.com/miyaoka/miyaoka.dev/pull/13
+
+パフォーマンスを計測してみたらやはりいくつもツイートを埋め込んでいると全部いっぺんにロードが走るので重い。
+
+`twtter.widget.createTweet` 後に iframe が挿入されるのでそこに `loading="lazy"` を付加すればいいかと思ったが、挿入された時点で読み込みが走ってしまう。なのでこの要素自体に IntersectionObserver で lazyload 処理を入れるようにした。
