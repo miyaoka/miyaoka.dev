@@ -7,7 +7,8 @@ date: '2020-12-28 10:00'
 
 https://i.imgur.com/aMg1cSQ.jpg
 
-[ダンス・ダンス・ダンス (講談社文庫)](https://www.amazon.co.jp/dp/B07FY51B62/?tag=miyaoka-22)
+https://www.amazon.co.jp/dp/B07FY51B62/?tag=miyaoka-22
+ダンス・ダンス・ダンス (講談社文庫)
 
 > 「穴を埋める為の文章を提供してるだけのことです。何でもいいんです。字が書いてあればいいんです。でも誰かが書かなくてはならない。で、僕が書いてるんです。雪かきと同じです。文化的雪かき」
 
