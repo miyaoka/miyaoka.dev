@@ -3,7 +3,7 @@ title: 埋め込みTweetをWeb Componentsで描画するようにした
 date: '2021-01-07'
 ---
 
-Zenn が Web Components を使って tweet を表示するようにしていたので、見習ってこのサイトにも取り入れてみた。
+[Zenn](https://zenn.dev/) が Web Components を使って tweet を表示するようにしていたので、見習ってこのサイトにも取り入れてみた。
 
 https://i.imgur.com/QMHKw1q.png
 
@@ -33,8 +33,16 @@ https://twitter.com/miyaoka/status/1346853138259611648?s=20
 ### Web Components 化して良くなったところ
 
 ```
-https://twitter.com/miyaoka/status/1346720500387438593
+https://twitter.com/miyaoka/status/1346720500387438593?s=20
 ```
+
+↓ markdown を HTML にするところで tweet の URL にマッチすれば Custom Element として出力
+
+```
+<embed-tweet src="https://twitter.com/miyaoka/status/1346720500387438593" />
+```
+
+→ Custom Element の`connectedCallback` イベントで最初は URL だけ表示し、twitter widget を load し終わったら URL は消す
 
 - Tweet の URL だけ貼れば表示できる
 - 各コンポーネントが自身の要素だけ load 実行する
@@ -44,6 +52,7 @@ https://twitter.com/miyaoka/status/1346720500387438593
 
 - 埋め込みコードは blockquote でテキスト内容が入っているのでロードされなくても情報があるが、URL だけだと情報が皆無
 - ツイ消しされるとなんのツイートだったか分からなくなって困ってしまう（VSCode 拡張作って URL 貼付け時に内容取得しに行くべきか？）
+- 埋め込みコードのオプションで `Hide Conversation` などが指定できない
 
 ## Custom Elements ⊂ Web Components
 
