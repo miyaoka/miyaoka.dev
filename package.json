@@ -3,9 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "run-p dev:next dev:open",
-    "dev:next": "next dev",
-    "dev:open": "open http://localhost:3000",
+    "dev": "next dev",
     "build:rss": "cross-env TS_NODE_COMPILER_OPTIONS={\\\"module\\\":\\\"commonjs\\\"} ts-node ./scripts/rss.ts",
     "build:sitemap": "cross-env TS_NODE_COMPILER_OPTIONS={\\\"module\\\":\\\"commonjs\\\"} ts-node ./scripts/sitemap.ts",
     "build": "next build",
