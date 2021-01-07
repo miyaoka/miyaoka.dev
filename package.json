@@ -10,7 +10,10 @@
     "build": "next build",
     "build:export": "next export",
     "export": "run-s build build:rss build:sitemap build:export",
-    "start": "next start"
+    "start": "next start",
+    "analyze": "cross-env ANALYZE=true next build",
+    "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
+    "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build"
   },
   "dependencies": {
     "autoprefixer": "^10.1.0",
@@ -31,6 +34,7 @@
     "unist-util-visit-parents": "^3.1.1"
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "^10.0.5",
     "@types/is-url": "^1.2.28",
     "@types/js-yaml": "^4.0.0",
     "@types/node": "^14.14.14",

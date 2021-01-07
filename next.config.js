@@ -23,3 +23,9 @@ require('chokidar')
   .watch('./posts', { ignoreInitial: true })
   .on('add', onChangePost)
   .on('change', onChangePost)
+
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+})
+
+module.exports = withBundleAnalyzer({})
