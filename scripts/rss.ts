@@ -24,7 +24,11 @@ async function generate() {
     const custom_elements = []
     if (post.image != null) {
       custom_elements.push({
-        'media:thumbnail': getThumbPath(post.image),
+        'media:thumbnail': {
+          _attr: {
+            url: getThumbPath(post.image),
+          },
+        },
       })
     }
     feed.item({
