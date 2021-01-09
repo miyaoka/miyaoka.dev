@@ -1,7 +1,7 @@
 const fs = require('fs')
 
 let isUpdating = false
-const postLib = `${__dirname}/lib/posts.ts`
+const postLib = `${__dirname}/pages/posts/[id].tsx`
 
 const onChangePost = () => {
   if (isUpdating) return

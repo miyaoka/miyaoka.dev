@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import {
   GetStaticPaths,
   InferGetStaticPropsType,
@@ -15,47 +15,60 @@ import styles from './post.module.css'
 export default function Post({
   postData,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  const { id, title, date, contentHtml, desc, image } = postData
+  const [post, setPost] = useState(postData)
+
+  // dev時ならmount時に記事内容の再取得を行う
+  if (process.env.NODE_ENV !== 'production') {
+    useEffect(() => {
+      const fn = async () => {
+        const res = await fetch(`/api/posts/${post.id}`).then((res) =>
+          res.json()
+        )
+        setPost(res.postData)
+      }
+      fn()
+    }, [])
+  }
 
   return (
     <Layout>
       <Head>
-        <title>{title}</title>
-        <meta property="og:title" key="og:title" content={title} />
-        {desc && (
+        <title>{post.title}</title>
+        <meta property="og:title" key="og:title" content={post.title} />
+        {post.desc && (
           <>
-            <meta name="description" key="description" content={desc} />
+            <meta name="description" key="description" content={post.desc} />
             <meta
               property="og:description"
               key="og:description"
-              content={desc}
+              content={post.desc}
             />
           </>
         )}
-        {image && (
+        {post.image && (
           <>
             <meta
               name="twitter:card"
               key="twitter:card"
               content="summary_large_image"
             />
-            <meta property="og:image" key="og:image" content={image} />
+            <meta property="og:image" key="og:image" content={post.image} />
           </>
         )}
       </Head>
       <article className={`${styles.article} mt-16 lg:text-lg`}>
         <small className="text-gray-500">
-          <DateTime dateString={date} />
+          <DateTime dateString={post.date} />
         </small>
-        <h1 className="text-3xl font-bold my-2">{title}</h1>
+        <h1 className="text-3xl font-bold my-2">{post.title}</h1>
         <div
           className="my-12"
-          dangerouslySetInnerHTML={{ __html: contentHtml }}
+          dangerouslySetInnerHTML={{ __html: post.contentHtml }}
         />
       </article>
       <div className="flex justify-center">
         <a
-          href={`https://twitter.com/intent/tweet?text="${title}"%0ahttps://miyaoka.dev/posts/${id}`}
+          href={`https://twitter.com/intent/tweet?text="${post.title}"%0ahttps://miyaoka.dev/posts/${post.id}`}
           target="_blank"
           rel="noopener"
           className="flex items-center flex-col"
