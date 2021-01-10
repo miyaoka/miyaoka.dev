@@ -30,6 +30,8 @@ https://github.com/vercel/next.js/discussions/11419#discussioncomment-271644
 
 → コンポーネントのみ再読み込みする
 
+https://twitter.com/miyaoka/status/1348157903337705475?s=20
+
 - next.conf から無理やりページコンポーネントに変更を発生させる
 - クライアントからコンテンツ取得するための API を追加し、ページコンポーネント内に再取得用のコードを書き加える
 - 読み直しはこれが最速
@@ -39,6 +41,8 @@ https://github.com/vercel/next.js/discussions/11419#discussioncomment-271644
 今回の手法。
 
 → ページを読み込み直す
+
+https://twitter.com/miyaoka/status/1348157692943077376?s=20
 
 - dev サーバーと route を拡張して、ファイル変更を検知したらリロードさせる
 - `next dev` コマンドを `next-remote-watch [target]` に書き換えるだけ
