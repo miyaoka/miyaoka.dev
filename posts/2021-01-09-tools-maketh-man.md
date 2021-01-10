@@ -118,7 +118,7 @@ Dropbox Paper + 全部入り的なサービスで、普段から仕事でもよ�
 
 - [自前ブログ作り](/posts/2020-12-21-blog-building)
 - [imgur 画像を最適に出力する HTML](/posts/2020-12-22-optimize-imgur)
-- [Next.js ブログの markdown 編集時に HMR する](/posts/2020-12-31-hmr-on-markdown)
+- [Next.js ブログの markdown 編集時に 表示更新 する](/posts/2020-12-31-hmr-on-markdown)
 - [VSCode 拡張でクリップボード画像を Imgur にアップロードする](/posts/2021-01-03-clipboard-to-imgur)
 - [埋め込み Tweet を Web Components で描画するようにした](/posts/2021-01-07-tweet-component)
 

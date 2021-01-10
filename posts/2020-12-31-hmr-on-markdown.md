@@ -1,5 +1,5 @@
 ---
-title: Next.jsブログのmarkdown編集時にHMRする
+title: Next.jsブログのmarkdown編集時に表示更新する
 date: '2020-12-31'
 ---
 

@@ -19,7 +19,7 @@ https://github.com/vercel/next.js/discussions/11419#discussioncomment-271644
 
 [最初にやってみた手法](/posts/2020-12-31-hmr-on-markdown)
 
-→ ページを再生成させる
+→ ページを再生成する
 
 - next.conf から無理やり getStaticProps が読んでいる関数ファイルに変更を発生させる
 - ブラウザのスクロール位置などの情報は失われる
@@ -28,7 +28,7 @@ https://github.com/vercel/next.js/discussions/11419#discussioncomment-271644
 
 [前回やってみた手法](/posts/2021-01-09-hmr-on-markdown-2)
 
-→ コンポーネントのみ再読み込みさせる
+→ コンポーネントのみ再読み込みする
 
 - next.conf から無理やりページコンポーネントに変更を発生させる
 - クライアントからコンテンツ取得するための API を追加し、ページコンポーネント内に再取得用のコードを書き加える
