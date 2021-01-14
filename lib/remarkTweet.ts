@@ -29,7 +29,7 @@ function ontext<V extends Node>(node: V, parents: Node[]) {
   const link = {
     type: 'html',
     position: node.position,
-    value: `<embed-tweet src="${line}" class="embedTweet" />`,
+    value: `<miyaoka-embed-tweet src="${line}" class="embedTweet" />`,
   }
 
   siblings[siblings.indexOf(node)] = link
