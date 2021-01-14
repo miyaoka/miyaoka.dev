@@ -5,8 +5,8 @@ import { Twitter, GitHub, Rss } from 'react-feather'
 import { getSortedPostsData } from '../lib/posts'
 import Layout from '../components/layout'
 import DateTime from '../components/dateTime'
-import ThumbImg from '../components/thumbImg'
 import site from '../site.config.json'
+import { getThumbPath } from '../lib/imgur'
 
 const linkList = [
   {
@@ -25,6 +25,10 @@ const linkList = [
     comp: Rss,
   },
 ]
+
+export const config = {
+  unstable_runtimeJS: false,
+}
 
 export default function Home({
   allPostsMetaData,
@@ -56,14 +60,10 @@ export default function Home({
             <li key={id} className="flex">
               <div className="thumb flex-shrink-0 mt-4 mr-5">
                 {image && (
-                  <Link href={`/posts/${id}`}>
-                    <a
-                      title={title}
-                      className="w-full h-full block border box-content border-gray-400 bg-gray-100 rounded-full"
-                    >
-                      {ThumbImg({ image, title })}
-                    </a>
-                  </Link>
+                  <miyaoka-img-loader
+                    class="w-full h-full block border box-content border-gray-400 bg-gray-100 rounded-full"
+                    src={getThumbPath(image)}
+                  ></miyaoka-img-loader>
                 )}
               </div>
               <div>

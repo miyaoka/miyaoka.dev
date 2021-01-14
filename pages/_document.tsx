@@ -51,6 +51,16 @@ export default class MyDocument extends Document {
             type="application/rss+xml"
             href={`${host}${feedPath}`}
           />
+          <script
+            type="module"
+            async
+            src="https://unpkg.com/@miyaoka/miyaoka-components/dist/miyaoka-components/miyaoka-components.esm.js"
+          />
+          <script
+            noModule
+            async
+            src="https://unpkg.com/@miyaoka/miyaoka-components/dist/miyaoka-components/miyaoka-components.js"
+          />
         </Head>
         <body className="pt-10 pb-20">
           <Main />

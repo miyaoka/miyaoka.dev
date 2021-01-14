@@ -12,6 +12,10 @@ import { getAllPostIds, getPostData } from '../../lib/posts'
 import DateTime from '../../components/dateTime'
 import styles from './post.module.css'
 
+export const config = {
+  unstable_runtimeJS: false,
+}
+
 export default function Post({
   postData,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
