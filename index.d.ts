@@ -1,5 +1,6 @@
 declare namespace JSX {
   interface IntrinsicElements {
-    'embed-tweet': { src: string }
+    'miyaoka-embed-tweet': { src: string }
+    'miyaoka-img-loader': { src: string; class: string }
   }
 }
