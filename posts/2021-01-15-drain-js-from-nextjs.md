@@ -9,7 +9,7 @@ https://i.imgur.com/eECrgcf.png
 
 ## どういうことか？
 
-このブログは静的書き出しをしているので、ただの静的なドキュメントといえる。だが Next にしろ Nuxt にしろ、書き出したページをブラウザで読み込むと JS アプリケーションとして振る舞うために Hydration 処理が行われる。これにより JS モジュールの読み込みや Scripting 処理の負荷が発生する。
+このブログは静的書き出しをしているので、ただの静的なドキュメントといえる。だが Next にしろ Nuxt にしろ、書き出したページをブラウザで読み込むと JS アプリケーションとして振る舞うために Hydration 処理が行われる。これをするために JS モジュールの読み込みや Scripting 処理の負荷が発生する。
 
 https://i.imgur.com/OLCCKb6.png
 書き出された HTML には Hydration 処理用に JS モジュールやシリアライズされた state が挿入されている
@@ -42,9 +42,7 @@ https://i.imgur.com/Im7CLfP.png
 
 あとトップページの記事サムネイルも、画像 onload のタイミングで transition させる制御を入れているので、これも Web Component 化を行った。
 
-Web Component はバニラで書いたり、[LitElement](https://lit-element.polymer-project.org/)、[Stencil.js](https://stenciljs.com/) などのライブラリを用いるやり方などがあるので、それぞれでの作り方を試してみた。
-
-JSX で書けたり Prop の定義が楽だったりレガシーブラウザ対応がしやすそうという点で最終的には Stencil を使うことにした。
+Web Component はバニラで書いたり、[LitElement](https://lit-element.polymer-project.org/)、[Stencil.js](https://stenciljs.com/) などのライブラリを用いるやり方などがある。いろいろ試してみたところ JSX で書けたり Prop の定義が楽だったりレガシーブラウザ対応がしやすそうという点で最終的には Stencil を使うことにした。
 
 作ったコンポーネントは別レポジトリで管理し、npm に publish して読み込めるようにした。next に依存させないよう、プロジェクトに import するのではなく script タグから読み込むようにしている。
 
@@ -73,3 +71,16 @@ https://jamstack.org/generators/
 Static Site Generators - Top Open Source SSGs | Jamstack
 
 非 Node だと Hugo とか Jekyll とかあるのだが、単にテンプレートだけでも JSX じゃないとつらいなと感じる。
+
+## 追記：11ty もある
+
+https://twitter.com/takanoripe/status/1349885611159666688?s=20
+
+https://www.11ty.dev/
+Eleventy is a simpler static site generator.
+
+JSX で書ける SSG ということでは 11ty(Eleventy)もあるよということを教えてもらった。
+
+https://twitter.com/takanoripe/status/1349890567795183617?s=20
+
+11ty は利用する Template Language を `HTML, Markdown, JavaScript, Liquid, Nunjucks, Handlebars, Mustache, EJS, Haml, Pug` の中からよりどりみどりに選べるようになっている。ただ標準で紹介されている Nunjucks テンプレートの `{% %}` 記法につい気絶してしまったのでそのへんよく調べてなかった。
