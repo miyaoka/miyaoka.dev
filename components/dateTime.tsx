@@ -1,9 +1,12 @@
-import { format } from 'date-fns'
-import { zonedTimeToUtc } from 'date-fns-tz'
+import { parseFromTimeZone, formatToTimeZone } from 'date-fns-timezone'
+import { timeZone } from '../site.config.json'
+
 export default function DateTime({ dateString }: { dateString: string }) {
-  const date = zonedTimeToUtc(dateString, 'Asia/Tokyo')
-  const datetime = date.toISOString()
-  const dateLabel = format(date, 'yyyy年M月d日')
+  const utcDate = parseFromTimeZone(dateString, { timeZone })
+  const datetime = utcDate.toISOString()
+  const dateLabel = formatToTimeZone(utcDate, 'YYYY年M月D日', {
+    timeZone,
+  })
 
   return <time dateTime={datetime}>{dateLabel}</time>
 }
