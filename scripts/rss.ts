@@ -3,7 +3,7 @@ import RSS from 'rss'
 import { getSortedPostsData } from '../lib/posts'
 import site from '../site.config.json'
 import { getThumbPath } from '../lib/imgur'
-import { parseISO } from 'date-fns'
+import { parseFromTimeZone } from 'date-fns-timezone'
 
 async function generate() {
   const allPostsData = await getSortedPostsData()
@@ -35,7 +35,9 @@ async function generate() {
       title: post.title,
       description: post.desc || '',
       url: `${site.host}${site.postsDir}/${post.id}`,
-      date: parseISO(post.date).toUTCString(),
+      date: parseFromTimeZone(post.date, {
+        timeZone: site.timeZone,
+      }).toUTCString(),
       custom_elements,
     })
   })

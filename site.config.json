@@ -4,5 +4,6 @@
   "author": "miyaoka",
   "host": "https://miyaoka.dev",
   "postsDir": "/posts",
-  "feedPath": "/feed.xml"
+  "feedPath": "/feed.xml",
+  "timeZone": "Asia/Tokyo"
 }
