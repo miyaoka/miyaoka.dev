@@ -38,7 +38,7 @@ article {
     @apply mx-auto;
   }
   a.autoLink {
-    @apply inline-block border-l-4 border-green-500 px-3 py-1 ml-2 leading-6;
+    @apply inline-block border-l-4 border-green-500 px-3 py-1 leading-6;
   }
   a.autoLink span {
     @apply text-sm;

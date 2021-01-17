@@ -28,7 +28,7 @@
     @apply max-w-full;
   }
   blockquote {
-    @apply border-gray-300 border-l-4 text-gray-500 p-1 pl-4 bg-gray-50;
+    @apply border-gray-300  text-gray-500 p-0.5 mx-1 px-4 bg-gray-50 leading-6 text-base;
   }
 
   figure {
