@@ -54,12 +54,12 @@ export default class MyDocument extends Document {
           <script
             type="module"
             async
-            src="https://unpkg.com/@miyaoka/miyaoka-components/dist/miyaoka-components/miyaoka-components.esm.js"
+            src="https://unpkg.com/@miyaoka/miyaoka-components@0.1.2/dist/miyaoka-components/miyaoka-components.esm.js"
           />
           <script
             noModule
             async
-            src="https://unpkg.com/@miyaoka/miyaoka-components/dist/miyaoka-components/miyaoka-components.js"
+            src="https://unpkg.com/@miyaoka/miyaoka-components@0.1.2/dist/miyaoka-components/miyaoka-components.js"
           />
         </Head>
         <body className="pt-10 pb-20">
