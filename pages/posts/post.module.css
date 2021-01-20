@@ -45,7 +45,7 @@
   }
 
   a {
-    @apply text-green-600;
+    @apply text-blue-600 underline;
   }
   a small {
     @apply text-xs text-gray-400 block overflow-ellipsis whitespace-nowrap overflow-hidden;
