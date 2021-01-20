@@ -41,7 +41,7 @@
     @apply hover:opacity-100;
   }
   img {
-    @apply mx-auto;
+    @apply mx-auto duration-300;
   }
 
   a {
