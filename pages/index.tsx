@@ -57,30 +57,30 @@ export default function Home({
       <section className="mt-20">
         <ul className="grid gap-y-4">
           {allPostsMetaData.map(({ id, date, title, desc, image }) => (
-            <li key={id} className="flex">
-              <div className="thumb flex-shrink-0 mt-4 mr-5">
-                {image && (
-                  <miyaoka-img-loader
-                    class="w-full h-full block border box-content border-gray-400 bg-gray-100 rounded-full relative z-0"
-                    src={getThumbPath(image)}
-                  ></miyaoka-img-loader>
-                )}
-              </div>
-              <div>
-                <small className="text-gray-500">
-                  <DateTime dateString={date} />
-                </small>
-                <Link href={`/posts/${id}`}>
-                  <a className="block">
+            <li key={id}>
+              <Link href={`/posts/${id}`}>
+                <a className="flex">
+                  <div className="thumb flex-shrink-0 mt-4 mr-5">
+                    {image && (
+                      <miyaoka-img-loader
+                        class="w-full h-full block border box-content border-gray-400 bg-gray-100 rounded-full relative z-0"
+                        src={getThumbPath(image)}
+                      ></miyaoka-img-loader>
+                    )}
+                  </div>
+                  <div>
+                    <small className="text-gray-500">
+                      <DateTime dateString={date} />
+                    </small>
                     <h2 className="text-lg font-bold">{title}</h2>
                     {desc && (
                       <div className="text-gray-500 text-sm leading-snug">
                         {desc}
                       </div>
                     )}
-                  </a>
-                </Link>
-              </div>
+                  </div>
+                </a>
+              </Link>
             </li>
           ))}
         </ul>
