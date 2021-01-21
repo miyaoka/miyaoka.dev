@@ -61,27 +61,31 @@ export default function Post({
         )}
       </Head>
       <article className={`${styles.article} mt-16 lg:text-lg`}>
-        <small className="text-gray-500">
-          <DateTime dateString={post.date} />
-        </small>
-        <h1 className="text-3xl font-bold my-2">{post.title}</h1>
+        <header>
+          <small className="text-gray-500">
+            <DateTime dateString={post.date} />
+          </small>
+          <h1 className="text-3xl font-bold my-2">{post.title}</h1>
+        </header>
         <div
-          className="my-12"
+          className="mt-12"
           dangerouslySetInnerHTML={{ __html: post.contentHtml }}
         />
       </article>
-      <div className="flex justify-center">
-        <a
-          href={`https://twitter.com/intent/tweet?text="${post.title}"%0ahttps://miyaoka.dev/posts/${post.id}`}
-          target="_blank"
-          rel="noopener"
-          className="flex items-center flex-col"
-          title="Share on Twitter"
-        >
-          <Twitter className="h-10 w-10" />
-          share
-        </a>
-      </div>
+      <footer className="mt-20">
+        <div className="flex justify-center">
+          <a
+            href={`https://twitter.com/intent/tweet?text="${post.title}"%0ahttps://miyaoka.dev/posts/${post.id}`}
+            target="_blank"
+            rel="noopener"
+            className="flex items-center flex-col"
+            title="Share on Twitter"
+          >
+            <Twitter className="h-10 w-10" />
+            share
+          </a>
+        </div>
+      </footer>
     </Layout>
   )
 }

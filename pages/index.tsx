@@ -55,7 +55,7 @@ export default function Home({
         })}
       </div>
       <section className="mt-20">
-        <ul className="grid gap-y-4">
+        <ul className="grid gap-y-6">
           {allPostsMetaData.map(({ id, date, title, desc, image }) => (
             <li key={id}>
               <Link href={`/posts/${id}`}>

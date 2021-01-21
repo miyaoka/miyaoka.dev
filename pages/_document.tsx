@@ -62,7 +62,7 @@ export default class MyDocument extends Document {
             src="https://unpkg.com/@miyaoka/miyaoka-components@0.1.2/dist/miyaoka-components/miyaoka-components.js"
           />
         </Head>
-        <body className="pt-10 pb-20">
+        <body className="pt-10 pb-40">
           <Main />
           <NextScript />
         </body>
