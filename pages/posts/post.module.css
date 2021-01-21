@@ -45,10 +45,10 @@
   }
 
   a {
-    @apply text-blue-600 underline;
+    @apply text-blue-700 underline;
   }
   a small {
-    @apply text-xs text-gray-400 block overflow-ellipsis whitespace-nowrap overflow-hidden;
+    @apply text-xs text-gray-600 block overflow-ellipsis whitespace-nowrap overflow-hidden;
   }
 
   code {
