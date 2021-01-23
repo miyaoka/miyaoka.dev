@@ -28,4 +28,15 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
 
-module.exports = withBundleAnalyzer({})
+module.exports = withBundleAnalyzer({
+  exportPathMap: async function (
+    defaultPathMap,
+    { dev, dir, outDir, distDir, buildId }
+  ) {
+    console.log(defaultPathMap, { dev, dir, outDir, distDir, buildId })
+    return defaultPathMap
+    // {
+    //   '/': { page: '/' },
+    // }
+  },
+})
