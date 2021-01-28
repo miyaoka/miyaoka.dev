@@ -85,13 +85,11 @@ export async function getPostData(id: string) {
   if (firstImg) {
     contentDesc.image = firstImg[1]
   }
-  const { title, date } = matterResult.data
   // Combine the data with the id and contentHtml
   return {
     id,
     contentHtml,
     ...contentDesc,
-    title,
-    date,
+    ...matterResult.data,
   } as PostItem
 }
