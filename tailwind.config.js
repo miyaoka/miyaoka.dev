@@ -25,6 +25,9 @@ module.exports = {
       colors: {
         blue: colors.lightBlue,
       },
+      borderRadius: {
+        42: '42%',
+      },
     },
   },
   variants: {},
