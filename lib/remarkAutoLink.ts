@@ -44,10 +44,15 @@ function ontext<V extends Node>(node: V, parents: Node[]) {
     const link = {
       type: 'html',
       position: node.position,
-      value: `<a href="${linkPath}" class="autoLink" target="_blank" rel="noopener">
-      ${caption ? caption : `<span>🔗 ${linkPath}</span>`}
-      ${caption ? `<small>🔗 ${new URL(linkPath).hostname}</small>` : ''}
-      </a>`,
+      value: `<iframe
+      loading="lazy"
+      class="hatenablogcard"
+      title="${caption || 'link'}"
+      src="https://hatenablog-parts.com/embed?url=${encodeURIComponent(
+        linkPath
+      )}"
+      frameborder="0" scrolling="no">
+    </iframe>`,
     }
 
     siblings[siblings.indexOf(node)] = link
