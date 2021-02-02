@@ -33,7 +33,7 @@ https://i.imgur.com/Mj0IeyE.jpg
 稲城ではないが、隣の府中市の武蔵野公園も良かった
 
 https://i.imgur.com/0woEQ3r.jpg
-向陽台の街並み
+向陽台の街並み。このへんは電柱が地中化されている
 
 https://i.imgur.com/pFyFQWH.jpg
 丘陵地帯の谷間、谷戸の風景。こういう景色が好き
@@ -85,6 +85,10 @@ https://i.imgur.com/BE5buZE.jpg
 https://i.imgur.com/XXcl9el.png
 
 丘陵地なので起伏があり、自転車が走りやすい道なので休日はトレーニングで走るロードバイク乗りの人が多い。自分はクロスバイクだし体力も無いのでいつもガンガン追い抜かされている。
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/UnOmoKLDyAs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+おそらく中止だが、オリンピック自転車競技のコースになる予定だったらしい。
 
 ## 生活・文化
 
