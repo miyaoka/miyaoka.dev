@@ -37,6 +37,7 @@ export default function Home({
     <Layout home>
       <Head>
         <title>{site.title}</title>
+        <link rel="canonical" href={site.host}></link>
       </Head>
       <div className="inline-grid grid-flow-col gap-x-2" title="profile">
         {linkList.map((link) => {

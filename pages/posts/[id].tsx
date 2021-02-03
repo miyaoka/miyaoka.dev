@@ -11,6 +11,7 @@ import Layout from '../../components/layout'
 import { getAllPostIds, getPostData } from '../../lib/posts'
 import DateTime from '../../components/dateTime'
 import styles from './post.module.css'
+import site from '../../site.config.json'
 
 export const config = {
   unstable_runtimeJS: false,
@@ -38,6 +39,10 @@ export default function Post({
     <Layout>
       <Head>
         <title>{post.title}</title>
+        <link
+          rel="canonical"
+          href={`${site.host}${site.postsDir}/${post.id}`}
+        ></link>
         <meta property="og:title" key="og:title" content={post.title} />
         {post.desc && (
           <>
