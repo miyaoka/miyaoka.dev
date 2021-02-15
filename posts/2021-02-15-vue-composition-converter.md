@@ -16,15 +16,15 @@ https://github.com/miyaoka/vue-composition-converter
 
 https://vue-composition-converter.vercel.app/
 
-## なにがしたいか
+## なにがしたいのか
 
-デモを見ると分かるが、実のところ Vue2 から Vue3 への移行ツールではなくて、Vue2 のまま [Composition API プラグイン](https://github.com/vuejs/composition-api)を用いた記法に書き換えるものになっている。
+[VueUse](https://vueuse.js.org/) のような composition 用の便利なライブラリを使いたいし、とりあえずコンポーネントからロジックを分離したいというモチベーションがあったため、いくつか既存コンポーネントを人力で書き換えてみるのを試してみた。
 
-これは既存の Vue2 プロジェクトをもろもろ Vue3 にするのが難しかったため、暫定のブリッジ対応という位置づけになっている（変換オプションを加えれば Vue3 用もできそう）。
+しかし手作業でやってみると作業量が多く、これは自動化しないときついと思ったのでツール化することにした。
 
-[VueUse](https://vueuse.js.org/) のような composition 用の便利なライブラリがあるし、とりあえずコンポーネントからロジックを分離したいというモチベーションがあったため、いくつかコンポーネントを人力で書き換えてみた。
+デモを見ると分かるが、Vue2 から Vue3 への移行ツールではなくて、Vue2 のまま [Composition API プラグイン](https://github.com/vuejs/composition-api)を用いた記法に書き換えるものになっている。
 
-しかし作業量が膨大になるのでこれはツールにしないとやっていけないと思ったのでツール化することにした。
+これは現状の自分のプロジェクトを完全に Vue3 移行させるのが難しかったため、暫定のブリッジ対応という位置づけになっている（別途変換オプションを加えれば Vue3 用もできそう）。
 
 ## 公式に無いのか？
 
@@ -64,7 +64,7 @@ data ~ lifecycle の option は削除して、setup 内に以下のように定�
 - methods -> function （vuex の mapActions も含む）
 - lifecycle -> new lifecycle hook
   - beforeCreate, created -> 即時関数
-- data, computed, methods で定義した変数を return する
+- data, computed, methods で宣言した変数を setup 末尾で return する
 
 ### props -> setup
 
@@ -83,10 +83,12 @@ compisition API の setup オプションの中では `this` を使わないよ�
   - xxx が ref, computed なら -> `xxx.value`
   - それ以外 -> `xxx`
 
+（このへんはきちんと node を辿らずに、雑にブロック全体を文字列として正規表現で置換しているだけなので、文字列中に this.xxx が定義されていると余計に変換してしまう（が、そういうケースはあまり無いだろうという判断））
+
 ### import の設定
 
 - 以上の変換処理で使用された依存モジュールを import に宣言する
-- `defineComponent`, `toRefs`, `ref`, `computed`, `watch`, `各種 lifecycle hook` を import
+- `defineComponent`, `toRefs`, `ref`, `computed`, `watch`, `各種 lifecycle hook` を使われているものだけ import
 
 ## まとめ
 
