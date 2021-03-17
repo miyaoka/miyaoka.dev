@@ -18,5 +18,5 @@ sitemap({
   targetDirectory: './public',
   ignoredExtensions: ['js', 'map'],
   extraPaths: ['/'],
-  ignoredPaths: ['[fallback]', '/404', '/index'],
+  ignoredPaths: ['[fallback]', '/404', '/500', '/index'],
 })
