@@ -12,6 +12,9 @@ https://i.imgur.com/vSMEUBB.png
 https://i.imgur.com/5vTJYvE.png
 置いた。ここでいいのか…？
 
+https://i.imgur.com/eGsfbjO.png
+廊下からの見通し的にはいいかも
+
 ## 買った
 
 高さは 180cm くらいある。10 号鉢の観葉植物を探すとこのくらいのサイズになるようだ。
