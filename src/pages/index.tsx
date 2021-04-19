@@ -64,7 +64,7 @@ export default function Home({
                   <div className="thumb flex-shrink-0 mt-4 mr-5">
                     {image && (
                       <miyaoka-img-loader
-                        class="w-full h-full block border box-content border-gray-400 bg-gray-100 rounded-42 relative z-0"
+                        class="w-full h-full block border box-content border-gray-400 bg-gray-100 rounded-[42%] relative z-0"
                         src={getThumbPath(image)}
                       ></miyaoka-img-loader>
                     )}
