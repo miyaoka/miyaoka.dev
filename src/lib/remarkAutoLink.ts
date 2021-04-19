@@ -44,10 +44,15 @@ function ontext<V extends Node>(node: V, parents: Node[]) {
     const link = {
       type: 'html',
       position: node.position,
-      value: `<iframe
+      value: caption
+        ? `<a href="${linkPath}" class="autoLink" target="_blank" rel="noopener">
+      ${caption}
+      <small>🔗 ${new URL(linkPath).hostname}</small>
+      </a>`
+        : `<iframe
       loading="lazy"
       class="hatenablogcard"
-      title="${caption || 'link'}"
+      title="link"
       src="https://hatenablog-parts.com/embed?url=${encodeURIComponent(
         linkPath
       )}"
