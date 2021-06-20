@@ -67,7 +67,7 @@ const getImg = (imgPath: string, inLink: boolean, caption?: string) => {
   const picture = getPicture(imgSrc, srcset, caption)
 
   if (inLink) return picture
-  return `<a href="${imgPath}" target="_blank" rel="noopener">${picture}</a>`
+  return `<miyaoka-lightbox src="${imgPath}">${picture}</miyaoka-lightbox>`
 }
 
 function ontext<V extends Node>(node: V, parents: Node[]) {
