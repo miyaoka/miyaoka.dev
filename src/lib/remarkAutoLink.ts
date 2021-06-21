@@ -51,7 +51,7 @@ function ontext<V extends Node>(node: V, parents: Node[]) {
       </a>`
         : `<iframe
       loading="lazy"
-      class="hatenablogcard"
+      class="linkcard"
       title="link"
       src="https://card.zenn.dev/?url=${encodeURIComponent(linkPath)}"
       frameborder="0" scrolling="no">

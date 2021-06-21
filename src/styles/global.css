@@ -43,7 +43,7 @@ article {
   a.autoLink span {
     @apply text-sm;
   }
-  .hatenablogcard {
-    @apply w-full my-8;
+  .linkcard {
+    @apply w-full;
   }
 }
