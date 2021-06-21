@@ -65,7 +65,7 @@ export default function Post({
           </>
         )}
       </Head>
-      <article className={`${styles.article} mt-16 lg:text-lg`}>
+      <article className={`${styles.article} mt-16`}>
         <header>
           <small className="text-gray-500">
             <DateTime dateString={post.date} />
