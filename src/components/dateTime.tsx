@@ -1,5 +1,7 @@
 import { parseFromTimeZone, formatToTimeZone } from 'date-fns-timezone'
-import { timeZone } from '../site.config.json'
+import config from '../site.config.json'
+
+const { timeZone } = config
 
 export default function DateTime({ dateString }: { dateString: string }) {
   const utcDate = parseFromTimeZone(dateString, { timeZone })

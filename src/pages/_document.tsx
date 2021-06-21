@@ -1,7 +1,8 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { GA_TRACKING_ID } from '../lib/gtag'
-import { host, feedPath } from '../site.config.json'
+import config from '../site.config.json'
 
+const { host, feedPath } = config
 const componentsVersion = `0.2.2`
 const componentsPath = `https://unpkg.com/@miyaoka/miyaoka-components@${componentsVersion}/dist/miyaoka-components/miyaoka-components`
 

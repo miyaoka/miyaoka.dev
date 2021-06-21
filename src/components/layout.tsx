@@ -1,7 +1,8 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import config from '../site.config.json'
 
-import { title, desc } from '../site.config.json'
+const { title, desc } = config
 
 export default function Layout({
   children,

@@ -8,8 +8,9 @@ import { images } from './remarkFigure'
 import { links } from './remarkAutoLink'
 import { tweet } from './remarkTweet'
 import externalLinks from 'remark-external-links'
+import config from '../site.config.json'
 
-import { postsDir } from '../site.config.json'
+const { postsDir } = config
 const postsDirectory = path.join(process.cwd(), postsDir)
 
 export async function getSortedPostsData() {
