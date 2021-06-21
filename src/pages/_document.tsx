@@ -2,6 +2,8 @@ import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { GA_TRACKING_ID } from '../lib/gtag'
 import { host, feedPath } from '../site.config.json'
 
+const miyaokaComponents = `https://unpkg.com/@miyaoka/miyaoka-components@0.2.1/dist/miyaoka-components/miyaoka-components`
+
 export default class MyDocument extends Document {
   render() {
     return (
@@ -51,16 +53,8 @@ export default class MyDocument extends Document {
             type="application/rss+xml"
             href={`${host}${feedPath}`}
           />
-          <script
-            type="module"
-            async
-            src="https://unpkg.com/@miyaoka/miyaoka-components@0.2.0/dist/miyaoka-components/miyaoka-components.esm.js"
-          />
-          <script
-            noModule
-            async
-            src="https://unpkg.com/@miyaoka/miyaoka-components@0.2.0/dist/miyaoka-components/miyaoka-components.js"
-          />
+          <script type="module" async src={`${miyaokaComponents}.esm.js`} />
+          <script noModule async src={`${miyaokaComponents}.js`} />
         </Head>
         <body className="pt-10 pb-40">
           <Main />
