@@ -53,9 +53,7 @@ function ontext<V extends Node>(node: V, parents: Node[]) {
       loading="lazy"
       class="hatenablogcard"
       title="link"
-      src="https://hatenablog-parts.com/embed?url=${encodeURIComponent(
-        linkPath
-      )}"
+      src="https://card.zenn.dev/?url=${encodeURIComponent(linkPath)}"
       frameborder="0" scrolling="no">
     </iframe>`,
     }
