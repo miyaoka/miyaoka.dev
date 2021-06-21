@@ -24,7 +24,7 @@ module.exports = {
     },
     extend: {
       colors: {
-        blue: colors.lightBlue,
+        blue: colors.sky,
       },
     },
   },
