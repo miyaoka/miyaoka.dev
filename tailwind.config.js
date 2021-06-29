@@ -26,6 +26,9 @@ module.exports = {
       colors: {
         blue: colors.sky,
       },
+      screens: {
+        tablet: { max: '640px' },
+      },
     },
   },
   variants: {},

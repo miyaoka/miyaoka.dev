@@ -17,7 +17,7 @@ export default function Layout({
     </Link>
   )
   return (
-    <div className="max-w-screen-sm mx-auto justify-center px-4 sm:px-0">
+    <div className="max-w-[840px] mx-auto justify-center p-12 pt-4 tablet:px-4 rounded-2xl tablet:rounded-none bg-white">
       <Head>
         <meta name="description" key="description" content={desc} />
         <meta name="twitter:card" key="twitter:card" content="summary" />

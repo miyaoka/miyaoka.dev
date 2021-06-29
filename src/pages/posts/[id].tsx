@@ -66,14 +66,14 @@ export default function Post({
         )}
       </Head>
       <article className={`${styles.article} mt-16`}>
-        <header>
+        <header className="text-center">
           <small className="text-gray-500">
             <DateTime dateString={post.date} />
           </small>
           <h1 className="text-3xl font-bold my-2">{post.title}</h1>
         </header>
         <div
-          className="mt-12"
+          className="mt-20"
           dangerouslySetInnerHTML={{ __html: post.contentHtml }}
         />
       </article>
