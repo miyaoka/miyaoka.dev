@@ -26,6 +26,9 @@
   }
 }
 
+body {
+  background-color: rgb(245, 245, 235);
+}
 article {
   blockquote.twitter-tweet {
     @apply border border-l border-gray-300 rounded-2xl bg-white p-4;

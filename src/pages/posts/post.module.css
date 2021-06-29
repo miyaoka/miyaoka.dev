@@ -1,18 +1,27 @@
 .article {
   line-height: 1.8;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: serif;
+    font-weight: bold;
+  }
   h2,
   h3,
   h4 {
-    @apply font-bold mt-12 mb-4;
+    @apply mt-16 mb-4;
   }
   h2 {
-    @apply text-2xl;
+    @apply text-3xl;
   }
   h3 {
-    @apply text-xl;
+    @apply text-2xl;
   }
   h4 {
-    @apply text-lg;
+    @apply text-xl;
   }
   p {
     @apply my-4;

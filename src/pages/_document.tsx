@@ -58,7 +58,7 @@ export default class MyDocument extends Document {
           <script type="module" async src={`${componentsPath}.esm.js`} />
           <script noModule async src={`${componentsPath}.js`} />
         </Head>
-        <body className="pt-10 pb-40 px-4 bg-gray-200 tablet:p-0">
+        <body className="pt-10 pb-40 px-4 tablet:p-0">
           <Main />
           <NextScript />
         </body>
