@@ -46,4 +46,7 @@ article {
   .linkcard {
     @apply w-full;
   }
+  h1 {
+    font-family: 'Noto Serif JP', serif;
+  }
 }

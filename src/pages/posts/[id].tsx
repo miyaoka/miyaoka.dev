@@ -70,7 +70,7 @@ export default function Post({
           <small className="text-gray-500">
             <DateTime dateString={post.date} />
           </small>
-          <h1 className="text-3xl font-bold my-2">{post.title}</h1>
+          <h1 className="text-4xl font-bold my-2">{post.title}</h1>
         </header>
         <div
           className="mt-20"

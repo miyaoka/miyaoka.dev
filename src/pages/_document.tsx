@@ -55,6 +55,16 @@ export default class MyDocument extends Document {
             type="application/rss+xml"
             href={`${host}${feedPath}`}
           />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossOrigin="anonymous"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@700&display=swap"
+            rel="stylesheet"
+          />
           <script type="module" async src={`${componentsPath}.esm.js`} />
           <script noModule async src={`${componentsPath}.js`} />
         </Head>
