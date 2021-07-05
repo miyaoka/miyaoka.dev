@@ -46,7 +46,7 @@ export default function Home({
               href={url}
               title={title}
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               className="flex flex-col gap-4"
             >
               <div

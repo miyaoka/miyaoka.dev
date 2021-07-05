@@ -22,17 +22,15 @@ export default function Post({
   const [post, setPost] = useState(postData)
 
   // dev時ならmount時に記事内容の再取得を行う
-  if (process.env.NODE_ENV !== 'production') {
-    useEffect(() => {
-      const fn = async () => {
-        const res = await fetch(`/api/posts/${post.id}`).then((res) =>
-          res.json()
-        )
-        setPost(res.postData)
-      }
-      fn()
-    }, [])
-  }
+
+  useEffect(() => {
+    if (process.env.NODE_ENV === 'production') return
+    const fn = async () => {
+      const res = await fetch(`/api/posts/${post.id}`).then((res) => res.json())
+      setPost(res.postData)
+    }
+    fn()
+  }, [post.id])
 
   return (
     <Layout>
@@ -81,7 +79,7 @@ export default function Post({
           <a
             href={`https://twitter.com/intent/tweet?text="${post.title}"%0ahttps://miyaoka.dev/posts/${post.id}`}
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
             className="flex items-center flex-col"
             title="Share on Twitter"
           >
