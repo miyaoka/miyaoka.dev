@@ -5,7 +5,6 @@ import {
   GetStaticPropsContext,
 } from 'next'
 import Head from 'next/head'
-import { Twitter } from 'react-feather'
 
 import Layout from '../../components/layout'
 import { getAllPostIds, getPostData } from '../../lib/posts'
@@ -86,7 +85,12 @@ export default function Post({
             className="flex items-center flex-col"
             title="Share on Twitter"
           >
-            <Twitter className="h-10 w-10" />
+            <div
+              className="h-10 w-10 bg-gray-700"
+              style={{
+                WebkitMask: `url(/images/twitter.svg) no-repeat center / contain`,
+              }}
+            />
             share
           </a>
         </div>

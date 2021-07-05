@@ -1,7 +1,6 @@
 import { InferGetStaticPropsType } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
-import { Twitter, GitHub, Rss } from 'react-feather'
 import { getSortedPostsData } from '../lib/posts'
 import Layout from '../components/layout'
 import DateTime from '../components/dateTime'
@@ -12,17 +11,17 @@ const linkList = [
   {
     title: 'Twitter',
     url: 'https://twitter.com/miyaoka',
-    comp: Twitter,
+    src: 'twitter',
   },
   {
     title: 'GitHub',
     url: 'https://github.com/miyaoka/miyaoka.dev',
-    comp: GitHub,
+    src: 'github',
   },
   {
     title: 'RSS',
     url: site.feedPath,
-    comp: Rss,
+    src: 'rss',
   },
 ]
 
@@ -40,17 +39,22 @@ export default function Home({
         <link rel="canonical" href={site.host}></link>
       </Head>
       <div className="inline-grid grid-flow-col gap-x-2" title="profile">
-        {linkList.map((link) => {
-          const Icon = link.comp
+        {linkList.map(({ title, url, src }) => {
           return (
             <a
-              key={link.url}
-              href={link.url}
-              title={link.title}
+              key={url}
+              href={url}
+              title={title}
               target="_blank"
               rel="noopener"
+              className="flex flex-col gap-4"
             >
-              <Icon className="h-8 w-8 text-red-300" />
+              <div
+                className="h-8 w-8  bg-red-300"
+                style={{
+                  WebkitMask: `url(/images/${src}.svg) no-repeat center / contain`,
+                }}
+              />
             </a>
           )
         })}
