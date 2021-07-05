@@ -1,6 +1,7 @@
 ---
 title: 初めてホタルを見た
 date: 2021-05-30
+tags: [sampo]
 ---
 
 https://i.imgur.com/dQ5SXux.jpg

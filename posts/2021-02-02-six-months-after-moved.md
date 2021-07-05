@@ -2,6 +2,7 @@
 title: 引っ越してから半年が経った
 date: 2021-02-02
 image: https://i.imgur.com/pFyFQWH.jpg
+tags: [lifestyle]
 ---
 
 稲城に引っ越してから半年経ったので振り返ってみる。

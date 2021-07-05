@@ -1,6 +1,7 @@
 ---
 title: '奥多摩サイクリング'
 date: '2020-12-19'
+tags: [outdoor]
 ---
 
 https://i.imgur.com/ryfQfoX.jpg

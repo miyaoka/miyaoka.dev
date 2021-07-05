@@ -2,6 +2,7 @@
 title: 朝の散歩風景
 date: 2021-04-24
 image: https://i.imgur.com/K2f3Crs.png
+tags: [sampo]
 ---
 
 冬の間はだいぶ引きこもっていたが、3 月中旬から暖かくなってきて、桜も咲いたので朝に散歩することが多くなった。

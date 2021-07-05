@@ -1,6 +1,7 @@
 ---
 title: 靴を洗濯した
 date: 2021-01-08
+tags: [lifestyle]
 ---
 
 https://i.imgur.com/PfYQeIG.jpg

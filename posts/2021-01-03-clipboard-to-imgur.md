@@ -1,6 +1,7 @@
 ---
 title: VSCode拡張でクリップボード画像をImgurにアップロードする
 date: '2021-01-03'
+tags: [tech, vscode]
 ---
 
 https://i.imgur.com/iAYpkt3.png

@@ -1,6 +1,7 @@
 ---
 title: Vueコンポーネントをcomposition APIに書き換えるやつを作っている
 date: 2021-02-15
+tags: [tech]
 ---
 
 Vue2 の Options API で書かれたコンポーネントを、composition API を使った書き方に自動変換したくてツールを作った。
