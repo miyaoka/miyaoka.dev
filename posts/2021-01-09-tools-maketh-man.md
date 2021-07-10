@@ -1,6 +1,7 @@
 ---
 title: 道具が人を作る
 date: 2021-01-09
+tags: [tech, column]
 ---
 
 https://i.imgur.com/vula48P.png

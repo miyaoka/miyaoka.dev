@@ -13,16 +13,20 @@ import config from '../site.config.json'
 const { postsDir } = config
 const postsDirectory = path.join(process.cwd(), postsDir)
 
-export async function getSortedPostsData() {
+const getAllPostData = async (): Promise<PostItem[]> => {
   // Get file names under /posts
   const fileNames = fs.readdirSync(postsDirectory)
-  const allPostsData = await Promise.all(
+  return Promise.all(
     fileNames.map(async (fileName) => {
       // Remove ".md" from file name to get id
       const id = fileName.replace(/\.md$/, '')
       return await getPostData(id)
     })
   )
+}
+
+export async function getSortedPostsData() {
+  const allPostsData = await getAllPostData()
 
   // Sort posts by date
   return allPostsData.sort((a, b) => {
@@ -34,15 +38,21 @@ export async function getSortedPostsData() {
   })
 }
 
+type TagCountMap = Record<string, number>
+export const getTagCountMap = async (): Promise<TagCountMap> => {
+  const allPostsData = await getAllPostData()
+  const tagCountMap = allPostsData.reduce((acc: TagCountMap, post) => {
+    post.tags?.forEach((tag) => {
+      acc[tag] = acc[tag] === undefined ? 1 : acc[tag] + 1
+    })
+    return acc
+  }, {})
+  return tagCountMap
+}
+
 export function getAllPostIds() {
   const fileNames = fs.readdirSync(postsDirectory)
-  return fileNames.map((fileName) => {
-    return {
-      params: {
-        id: fileName.replace(/\.md$/, ''),
-      },
-    }
-  })
+  return fileNames.map((fileName) => fileName.replace(/\.md$/, ''))
 }
 
 type PostItem = {
@@ -52,6 +62,7 @@ type PostItem = {
   contentHtml: string
   desc?: string
   image?: string
+  tags?: string[]
 }
 
 export async function getPostData(id: string) {

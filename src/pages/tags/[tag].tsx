@@ -1,30 +1,16 @@
-import { InferGetStaticPropsType } from 'next'
+import {
+  GetStaticPaths,
+  InferGetStaticPropsType,
+  GetStaticPropsContext,
+} from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
-import { getTagCountMap, getSortedPostsData } from '../lib/posts'
-import Layout from '../components/layout'
-import DateTime from '../components/dateTime'
-import site from '../site.config.json'
-import { getThumbPath } from '../lib/imgur'
-import { TagLink } from '../components/tag'
-
-const linkList = [
-  {
-    title: 'Twitter',
-    url: 'https://twitter.com/miyaoka',
-    src: 'twitter',
-  },
-  {
-    title: 'GitHub',
-    url: 'https://github.com/miyaoka/miyaoka.dev',
-    src: 'github',
-  },
-  {
-    title: 'RSS',
-    url: site.feedPath,
-    src: 'rss',
-  },
-]
+import { getTagCountMap, getSortedPostsData } from '../../lib/posts'
+import Layout from '../../components/layout'
+import DateTime from '../../components/dateTime'
+import site from '../../site.config.json'
+import { getThumbPath } from '../../lib/imgur'
+import { getTagLabel, TagLink } from '../../components/tag'
 
 export const config = {
   unstable_runtimeJS: false,
@@ -32,7 +18,7 @@ export const config = {
 
 export default function Home({
   allPostsMetaData,
-  allPostTags,
+  currentTag,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <Layout home>
@@ -40,34 +26,10 @@ export default function Home({
         <title>{site.title}</title>
         <link rel="canonical" href={site.host}></link>
       </Head>
-      <div className="inline-grid grid-flow-col gap-x-2" title="profile">
-        {linkList.map(({ title, url, src }) => {
-          return (
-            <a
-              key={url}
-              href={url}
-              title={title}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex flex-col gap-4"
-            >
-              <div
-                className="h-8 w-8  bg-red-300"
-                style={{
-                  WebkitMask: `url(/images/${src}.svg) no-repeat center / contain`,
-                }}
-              />
-            </a>
-          )
-        })}
-      </div>
-
-      <section className="mt-20">
-        <div className="flex flex-wrap gap-1 text-sm">
-          {allPostTags.map(([tag, count]) => TagLink({ tag, count }))}
-        </div>
-      </section>
-      <section className="mt-10">
+      <header className="mt-20">
+        <h2 className="my-2 font-bold">{getTagLabel(currentTag)} の記事一覧</h2>
+      </header>
+      <section className="mt-8">
         <ul className="grid gap-y-6">
           {allPostsMetaData.map(({ id, date, title, desc, image, tags }) => (
             <li key={id} className="flex">
@@ -76,7 +38,7 @@ export default function Home({
                   <Link href={`/posts/${id}`}>
                     <a>
                       <miyaoka-img-loader
-                        class="w-full h-full block border box-content border-gray-400 bg-gray-100 rounded-[42%] relative z-0 hydrated"
+                        class="w-full h-full block border box-content border-gray-400 bg-gray-100 rounded-[42%] relative z-0"
                         src={getThumbPath(image)}
                       ></miyaoka-img-loader>
                     </a>
@@ -99,7 +61,7 @@ export default function Home({
                 </Link>
 
                 {tags && (
-                  <div className="flex gap-1 text-sm">
+                  <div className="text-sm flex gap-2">
                     {tags.map((tag) => TagLink({ tag }))}
                   </div>
                 )}
@@ -112,21 +74,29 @@ export default function Home({
   )
 }
 
-export async function getStaticProps() {
-  const allPostsData = await getSortedPostsData()
+export const getStaticPaths: GetStaticPaths = async () => {
   const tagCountMap = await getTagCountMap()
-  const allPostTags = Object.entries(tagCountMap).sort((a, b) => b[1] - a[1])
+  return {
+    paths: Object.keys(tagCountMap).map((tag) => ({ params: { tag } })),
+    fallback: false,
+  }
+}
+
+export async function getStaticProps({ params }: GetStaticPropsContext) {
+  const allPostsData = await getSortedPostsData()
+  const currentTag = params?.tag as string
 
   // reduce state data
-  const allPostsMetaData = allPostsData.map((post) => {
+  const allPostsMetaData = allPostsData.flatMap((post) => {
+    if (!post.tags?.includes(currentTag)) return []
     const { contentHtml, ...metaData } = post
-    return metaData
+    return [metaData]
   })
 
   return {
     props: {
       allPostsMetaData,
-      allPostTags,
+      currentTag,
     },
   }
 }

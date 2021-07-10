@@ -1,6 +1,7 @@
 ---
 title: Next.jsブログのmarkdown編集時に表示更新する(2)
 date: 2021-01-09 22:00
+tags: [tech, nextjs]
 ---
 
 Next.js ブログの記事編集時に自動表示更新機能を[以前実装した](/posts/2020-12-31-hmr-on-markdown)が、スクロール位置が失われる問題が出てきたので実装方法を変更した。

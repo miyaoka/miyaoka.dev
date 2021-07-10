@@ -2,6 +2,7 @@
 title: 青木昆陽の墓
 date: 2021-01-28
 image: https://i.imgur.com/TjE68iQ.jpg
+tags: [sampo]
 ---
 
 さつまいもを無限に食べたくなったので通販で 10kg 買った。

@@ -1,6 +1,7 @@
 ---
 title: 塀の上の猫
 date: 2021-01-20
+tags: [sampo]
 ---
 
 https://i.imgur.com/tOCvvJc.png

@@ -2,6 +2,7 @@
 title: でかい観葉植物を買った
 date: 2021-04-11
 image: https://i.imgur.com/5vTJYvE.png
+tags: [plants]
 ---
 
 [以前、観葉植物を買った](/posts/2021-01-30-ornamental-foliage-plant)のだが、もっと大きいのも欲しくなって買ってみた。

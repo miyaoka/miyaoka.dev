@@ -2,6 +2,7 @@
 title: 塩まぐろを作って食べる
 date: '2020-12-27'
 image: https://i.imgur.com/OsZ0ij0.png
+tags: [food]
 ---
 
 まぐろのおいしい食べ方を試してみた。

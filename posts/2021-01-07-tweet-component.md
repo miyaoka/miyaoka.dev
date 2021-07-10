@@ -1,6 +1,7 @@
 ---
 title: 埋め込みTweetをWeb Componentsで描画するようにした
 date: '2021-01-07'
+tags: [tech, web components]
 ---
 
 [Zenn](https://zenn.dev/) が Web Components を使って tweet を表示するようにしていたので、見習ってこのサイトにも取り入れてみた。

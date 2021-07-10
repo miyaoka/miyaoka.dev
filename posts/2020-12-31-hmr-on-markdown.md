@@ -1,6 +1,7 @@
 ---
 title: Next.jsブログのmarkdown編集時に表示更新する
 date: '2020-12-31'
+tags: [tech, nextjs]
 ---
 
 https://i.imgur.com/RSiYuJB.png

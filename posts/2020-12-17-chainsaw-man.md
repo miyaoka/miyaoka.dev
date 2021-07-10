@@ -1,6 +1,7 @@
 ---
 title: 'チェンソーマン完結'
 date: '2020-12-17'
+tags: [book]
 ---
 
 今週のジャンプでチェンソーマンが完結したので[藤川くん](https://twitter.com/ushiro_noko)と振り返りの雑談をした。

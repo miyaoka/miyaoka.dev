@@ -1,6 +1,7 @@
 ---
 title: NextのJSぜんぶ抜く
 date: 2021-01-15
+tags: [tech, nextjs]
 ---
 
 サイトパフォーマンスを最適化するため、export 時に Next.js のランタイムを全部抜いた。

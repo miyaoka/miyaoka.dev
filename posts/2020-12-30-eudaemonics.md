@@ -1,6 +1,7 @@
 ---
 title: シャニマスと幸福論
 date: '2020-12-30 10:00'
+tags: [game]
 ---
 
 シャニマスの[アルストロメリア](https://shinycolors.idolmaster.jp/idol/alstroemeria/)というユニットの『アルストロメリア』という曲で「幸福論誕生」と歌われている。
