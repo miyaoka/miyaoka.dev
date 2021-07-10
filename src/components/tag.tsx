@@ -14,6 +14,7 @@ const emojiMap: Record<string, string> = {
   music: '🎵',
   movie: '🎞️',
   column: '📰',
+  nextjs: '🔺',
 }
 
 const getHue = (input: string): number => {
