@@ -63,7 +63,7 @@ export default function Home({
       </div>
 
       <section className="mt-20">
-        <div className="flex flex-wrap gap-1 text-white text-sm">
+        <div className="flex flex-wrap gap-1 text-sm">
           {allPostTags.map(([tag, count]) => TagLink({ tag, count }))}
         </div>
       </section>
@@ -99,7 +99,7 @@ export default function Home({
                 </Link>
 
                 {tags && (
-                  <div className="flex gap-1 text-sm text-white">
+                  <div className="flex gap-1 text-sm">
                     {tags.map((tag) => TagLink({ tag }))}
                   </div>
                 )}

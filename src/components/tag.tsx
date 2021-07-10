@@ -29,12 +29,14 @@ export const getTagLabel = (tag: string) => {
 }
 
 export const TagLink = ({ tag, count }: { tag: string; count?: number }) => {
+  const hue = getHue(tag)
   return (
     <Link href={`/tags/${tag}`} key={tag}>
       <a
-        className="px-1.5 bg-gray-300 hover:bg-red-500 rounded-lg"
+        className="px-1.5 rounded-lg border"
         style={{
-          background: `hsl(${getHue(tag)}, 40%, 60%)`,
+          borderColor: `hsl(${hue}, 50%, 50%)`,
+          background: `hsl(${hue}, 50%, 90%)`,
         }}
         title={`${tag}` + (count != null ? ` (${count})` : '')}
       >

@@ -61,7 +61,7 @@ export default function Home({
                 </Link>
 
                 {tags && (
-                  <div className="text-sm flex gap-2 text-white">
+                  <div className="text-sm flex gap-2">
                     {tags.map((tag) => TagLink({ tag }))}
                   </div>
                 )}

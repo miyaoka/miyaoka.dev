@@ -69,7 +69,7 @@ export default function Post({
             <DateTime dateString={post.date} />
           </small>
           <h1 className="text-4xl my-2 leading-tight">{post.title}</h1>
-          <div className="flex justify-center gap-1 text-sm text-white">
+          <div className="flex justify-center gap-1 text-sm">
             {post.tags?.map((tag) => TagLink({ tag }))}
           </div>
         </header>
