@@ -11,6 +11,7 @@ import { getAllPostIds, getPostData } from '../../lib/posts'
 import DateTime from '../../components/dateTime'
 import styles from './post.module.css'
 import site from '../../site.config.json'
+import { TagLink } from '../../components/tag'
 
 export const config = {
   unstable_runtimeJS: false,
@@ -68,12 +69,12 @@ export default function Post({
             <DateTime dateString={post.date} />
           </small>
           <h1 className="text-4xl my-2 leading-tight">{post.title}</h1>
-          {post.tags?.map((tag) => (
-            <div key={tag}>{tag}</div>
-          ))}
+          <div className="flex justify-center gap-1 text-sm text-white">
+            {post.tags?.map((tag) => TagLink({ tag }))}
+          </div>
         </header>
         <div
-          className="mt-20"
+          className="body mt-20"
           dangerouslySetInnerHTML={{ __html: post.contentHtml }}
         />
       </article>

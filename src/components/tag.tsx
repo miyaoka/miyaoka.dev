@@ -21,10 +21,13 @@ const getHue = (input: string): number => {
   return parseInt(hash.substr(0, 2), 16)
 }
 
-export const TagLink = ({ tag }: { tag: string }) => {
+export const getTagLabel = (tag: string) => {
   const emoji = emojiMap[tag]
 
-  const text = emoji == null ? tag : `${emoji} ${tag}`
+  return emoji == null ? tag : `${emoji} ${tag}`
+}
+
+export const TagLink = ({ tag, count }: { tag: string; count?: number }) => {
   return (
     <Link href={`/tags/${tag}`} key={tag}>
       <a
@@ -32,8 +35,9 @@ export const TagLink = ({ tag }: { tag: string }) => {
         style={{
           background: `hsl(${getHue(tag)}, 40%, 60%)`,
         }}
+        title={`${tag}` + (count != null ? ` (${count})` : '')}
       >
-        {text}
+        {getTagLabel(tag)}
       </a>
     </Link>
   )

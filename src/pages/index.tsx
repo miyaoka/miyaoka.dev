@@ -6,7 +6,7 @@ import Layout from '../components/layout'
 import DateTime from '../components/dateTime'
 import site from '../site.config.json'
 import { getThumbPath } from '../lib/imgur'
-import { TagLink } from '../components/tagList'
+import { TagLink } from '../components/tag'
 
 const linkList = [
   {
@@ -64,7 +64,7 @@ export default function Home({
 
       <section className="mt-20">
         <div className="flex flex-wrap gap-1 text-white text-sm">
-          {allPostTags.map(([tag, count]) => TagLink({ tag }))}
+          {allPostTags.map(([tag, count]) => TagLink({ tag, count }))}
         </div>
       </section>
       <section className="mt-10">

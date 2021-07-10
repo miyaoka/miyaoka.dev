@@ -10,7 +10,7 @@ import Layout from '../../components/layout'
 import DateTime from '../../components/dateTime'
 import site from '../../site.config.json'
 import { getThumbPath } from '../../lib/imgur'
-import { TagLink } from '../../components/tagList'
+import { getTagLabel, TagLink } from '../../components/tag'
 
 export const config = {
   unstable_runtimeJS: false,
@@ -18,6 +18,7 @@ export const config = {
 
 export default function Home({
   allPostsMetaData,
+  currentTag,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <Layout home>
@@ -25,8 +26,10 @@ export default function Home({
         <title>{site.title}</title>
         <link rel="canonical" href={site.host}></link>
       </Head>
-
-      <section className="mt-20">
+      <header className="mt-20">
+        <h2 className="my-2 font-bold">{getTagLabel(currentTag)} の記事一覧</h2>
+      </header>
+      <section className="mt-8">
         <ul className="grid gap-y-6">
           {allPostsMetaData.map(({ id, date, title, desc, image, tags }) => (
             <li key={id} className="flex">
@@ -81,11 +84,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export async function getStaticProps({ params }: GetStaticPropsContext) {
   const allPostsData = await getSortedPostsData()
-  const tag = params?.tag as string
+  const currentTag = params?.tag as string
 
   // reduce state data
   const allPostsMetaData = allPostsData.flatMap((post) => {
-    if (!post.tags?.includes(tag)) return []
+    if (!post.tags?.includes(currentTag)) return []
     const { contentHtml, ...metaData } = post
     return [metaData]
   })
@@ -93,6 +96,7 @@ export async function getStaticProps({ params }: GetStaticPropsContext) {
   return {
     props: {
       allPostsMetaData,
+      currentTag,
     },
   }
 }
