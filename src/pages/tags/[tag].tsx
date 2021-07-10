@@ -5,11 +5,12 @@ import {
 } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
-import { getAllPostTags, getSortedPostsData } from '../../lib/posts'
+import { getTagCountMap, getSortedPostsData } from '../../lib/posts'
 import Layout from '../../components/layout'
 import DateTime from '../../components/dateTime'
 import site from '../../site.config.json'
 import { getThumbPath } from '../../lib/imgur'
+import { TagLink } from '../../components/tagList'
 
 export const config = {
   unstable_runtimeJS: false,
@@ -58,13 +59,7 @@ export default function Home({
 
                 {tags && (
                   <div className="text-sm flex gap-2 text-white">
-                    {tags.map((tag) => (
-                      <Link href={`/tags/${tag}`} key={tag}>
-                        <a className="px-2 bg-gray-400 hover:bg-red-500">
-                          {tag}
-                        </a>
-                      </Link>
-                    ))}
+                    {tags.map((tag) => TagLink({ tag }))}
                   </div>
                 )}
               </div>
@@ -77,19 +72,16 @@ export default function Home({
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = await getAllPostTags()
-  console.log(paths)
+  const tagCountMap = await getTagCountMap()
   return {
-    paths,
+    paths: Object.keys(tagCountMap).map((tag) => ({ params: { tag } })),
     fallback: false,
   }
 }
 
 export async function getStaticProps({ params }: GetStaticPropsContext) {
   const allPostsData = await getSortedPostsData()
-
   const tag = params?.tag as string
-  console.log(tag)
 
   // reduce state data
   const allPostsMetaData = allPostsData.flatMap((post) => {

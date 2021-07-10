@@ -38,25 +38,21 @@ export async function getSortedPostsData() {
   })
 }
 
-export const getAllPostTags = async (): Promise<
-  {
-    params: { tag: string }
-  }[]
-> => {
+type TagCountMap = Record<string, number>
+export const getTagCountMap = async (): Promise<TagCountMap> => {
   const allPostsData = await getAllPostData()
-  const allTags = allPostsData.flatMap((post) => post.tags || [])
-  return Array.from(new Set(allTags), (tag) => ({ params: { tag } }))
+  const tagCountMap = allPostsData.reduce((acc: TagCountMap, post) => {
+    post.tags?.forEach((tag) => {
+      acc[tag] = acc[tag] === undefined ? 1 : acc[tag] + 1
+    })
+    return acc
+  }, {})
+  return tagCountMap
 }
 
 export function getAllPostIds() {
   const fileNames = fs.readdirSync(postsDirectory)
-  return fileNames.map((fileName) => {
-    return {
-      params: {
-        id: fileName.replace(/\.md$/, ''),
-      },
-    }
-  })
+  return fileNames.map((fileName) => fileName.replace(/\.md$/, ''))
 }
 
 type PostItem = {

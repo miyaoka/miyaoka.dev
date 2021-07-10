@@ -1,7 +1,7 @@
 import { InferGetStaticPropsType } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
-import { getAllPostTags, getSortedPostsData } from '../lib/posts'
+import { getTagCountMap, getSortedPostsData } from '../lib/posts'
 import Layout from '../components/layout'
 import DateTime from '../components/dateTime'
 import site from '../site.config.json'
@@ -64,10 +64,10 @@ export default function Home({
 
       <section className="mt-20">
         <div className="flex flex-wrap gap-1 text-white text-sm">
-          {allPostTags.map(({ params }) => TagLink({ tag: params.tag }))}
+          {allPostTags.map(([tag, count]) => TagLink({ tag }))}
         </div>
       </section>
-      <section>
+      <section className="mt-10">
         <ul className="grid gap-y-6">
           {allPostsMetaData.map(({ id, date, title, desc, image, tags }) => (
             <li key={id} className="flex">
@@ -114,7 +114,8 @@ export default function Home({
 
 export async function getStaticProps() {
   const allPostsData = await getSortedPostsData()
-  const allPostTags = await getAllPostTags()
+  const tagCountMap = await getTagCountMap()
+  const allPostTags = Object.entries(tagCountMap).sort((a, b) => b[1] - a[1])
 
   // reduce state data
   const allPostsMetaData = allPostsData.map((post) => {

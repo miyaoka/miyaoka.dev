@@ -102,9 +102,8 @@ export default function Post({
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = getAllPostIds()
-  console.log(paths)
   return {
-    paths,
+    paths: paths.map((path) => ({ params: { id: path } })),
     fallback: false,
   }
 }
@@ -117,7 +116,3 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
     },
   }
 }
-
-console.log('updatedAt: 2021-07-05T13:58:55.213Z')
-console.log('updatedAt: 2021-07-05T13:59:13.830Z')
-console.log('updatedAt: 2021-07-05T14:17:35.623Z')

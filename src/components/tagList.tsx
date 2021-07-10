@@ -29,11 +29,9 @@ export const TagLink = ({ tag }: { tag: string }) => {
     <Link href={`/tags/${tag}`} key={tag}>
       <a
         className="px-1.5 bg-gray-300 hover:bg-red-500 rounded-lg"
-        style={
-          {
-            // background: `hsl(${getHue(tag)}, 40%, 60%)`,
-          }
-        }
+        style={{
+          background: `hsl(${getHue(tag)}, 40%, 60%)`,
+        }}
       >
         {text}
       </a>
