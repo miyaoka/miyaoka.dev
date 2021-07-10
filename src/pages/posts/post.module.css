@@ -23,6 +23,8 @@
   h4 {
     @apply text-xl;
   }
+}
+.body {
   p {
     @apply my-4;
   }
@@ -53,10 +55,10 @@
     @apply mx-auto duration-300;
   }
 
-  body a {
+  a {
     @apply text-blue-700 underline;
   }
-  body a small {
+  a small {
     @apply text-xs text-gray-600 block overflow-ellipsis whitespace-nowrap overflow-hidden;
   }
 

@@ -74,7 +74,7 @@ export default function Post({
           </div>
         </header>
         <div
-          className="body mt-20"
+          className={`${styles.body} mt-20`}
           dangerouslySetInnerHTML={{ __html: post.contentHtml }}
         />
       </article>
