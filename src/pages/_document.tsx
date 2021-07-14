@@ -3,7 +3,7 @@ import { GA_TRACKING_ID } from '../lib/gtag'
 import config from '../site.config.json'
 
 const { host, feedPath } = config
-const componentVersion = '0.3.2'
+const componentVersion = '0.3.3'
 const componentsPath = `https://unpkg.com/@miyaoka/miyaoka-components@${componentVersion}/dist/miyaoka-components/miyaoka-components`
 
 export default class MyDocument extends Document {
