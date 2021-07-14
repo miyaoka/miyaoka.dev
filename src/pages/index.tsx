@@ -85,7 +85,7 @@ export default function Home({
               </div>
               <div className="flex  flex-1 flex-col gap-2">
                 <Link href={`/posts/${id}`}>
-                  <a className="flex flex-col flex-1">
+                  <a className="flex flex-col flex-1" data-prefetch>
                     <small className="text-gray-500">
                       <DateTime dateString={date} />
                     </small>

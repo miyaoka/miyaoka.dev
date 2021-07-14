@@ -39,6 +39,7 @@ export const TagLink = ({ tag, count }: { tag: string; count?: number }) => {
           background: `hsl(${hue}, 50%, 90%)`,
         }}
         title={`${tag}` + (count != null ? ` (${count})` : '')}
+        data-prefetch
       >
         {getTagLabel(tag)}
       </a>

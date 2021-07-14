@@ -13,7 +13,9 @@ export default function Layout({
 }) {
   const siteTitleElement = (
     <Link href="/">
-      <a className="text-lg font-bold">{title}</a>
+      <a className="text-lg font-bold" data-prefetch>
+        {title}
+      </a>
     </Link>
   )
   return (
