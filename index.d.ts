@@ -3,5 +3,6 @@ declare namespace JSX {
     'miyaoka-embed-tweet': { src: string }
     'miyaoka-img-loader': { src: string; class: string }
     'miyaoka-lightbox': { src: string }
+    'miyaoka-prefetch': {}
   }
 }

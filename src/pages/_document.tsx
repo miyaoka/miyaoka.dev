@@ -3,8 +3,7 @@ import { GA_TRACKING_ID } from '../lib/gtag'
 import config from '../site.config.json'
 
 const { host, feedPath } = config
-const componentsVersion = `0.2.2`
-const componentsPath = `https://unpkg.com/@miyaoka/miyaoka-components@${componentsVersion}/dist/miyaoka-components/miyaoka-components`
+const componentsPath = `https://unpkg.com/@miyaoka/miyaoka-components/dist/miyaoka-components/miyaoka-components`
 
 export default class MyDocument extends Document {
   render() {
@@ -61,6 +60,7 @@ export default class MyDocument extends Document {
         <body className="pt-10 pb-40 px-4 tablet:p-0">
           <Main />
           <NextScript />
+          <miyaoka-prefetch></miyaoka-prefetch>
         </body>
       </Html>
     )
